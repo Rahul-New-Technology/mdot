@@ -1,0 +1,102 @@
+{
+  "theme_strategy": "Hybrid Light/Dark Corporate Premium",
+  "app_type": "hybrid_fullstack",
+  "design_vibe": "Awwwards Site-of-the-Day level, bold, cohesive art direction, highly professional, enterprise B2B trust, kinetic motion.",
+  "colors": {
+    "primary": "#0066FF",
+    "primary_light": "#25B5FF",
+    "dark_navy": "#071B3B",
+    "white": "#FFFFFF",
+    "light_gray": "#F5F7FA",
+    "dark_gray": "#2E3440",
+    "gradients": {
+      "primary_gradient": "linear-gradient(135deg, #0066FF 0%, #25B5FF 100%)",
+      "navy_overlay": "rgba(7, 27, 59, 0.80)",
+      "navy_gradient": "linear-gradient(to bottom, #071B3B, #2E3440)"
+    },
+    "rules": "STRICT COLOR SYSTEM. Avoid black and gold as primary. Use blue gradients from logo. Buttons use primary blue gradients. Dark navy sections where appropriate. Cards use white bg with soft shadows."
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Space Grotesk",
+      "weights": ["700", "600", "500"],
+      "usage": "H1-H6. Use tracking-tight (-0.02em to -0.04em) for premium feel."
+    },
+    "body": {
+      "font_family": "IBM Plex Sans",
+      "weights": ["400", "500"],
+      "usage": "All paragraph text, labels, metadata. Use tracking-normal to loose for high legibility."
+    },
+    "rules": "H1 up to text-5xl/text-6xl. Do not use generic sans for headings."
+  },
+  "hero_rules": {
+    "alignment": "LEFT",
+    "background": "Professional background image with dark blue overlay (bg-[#071B3B]/80 or 75-85% opacity).",
+    "content": "Only: small badge, main heading, short description, two CTA buttons — nothing else on hero image.",
+    "restrictions": "NEVER large paragraphs over hero image. Detailed info goes BELOW hero.",
+    "motion": "Kinetic hero with signature on-load masked line-by-line word reveal using framer-motion. Subtle parallax or 3D moment in hero (e.g., orbiting dot echoing logo mark or blueprint schematic parallax)."
+  },
+  "layout_and_spacing": {
+    "section_padding": "py-24 to py-32 (120px top + 120px bottom minimum spacing)",
+    "section_alternation": "Alternate section backgrounds: White / Very Light Gray (#F5F7FA) / Dark Navy (#071B3B) / Blue Gradient.",
+    "content_positioning": "No content over detailed images. Images are visual enhancement only. Text NEVER on top of detailed images — always use dark overlay, solid bg, gradient bg, or glass card.",
+    "cards": "20px border-radius, soft shadow (shadow-[0_8px_30px_rgb(0,0,0,0.04)]), hover animation (-translate-y-1, shadow-lg), premium icons, modern typography.",
+    "images": "Every image must have rounded corners (rounded-2xl or 20px radius) and lazy loading.",
+    "bento_grid": "Use bento grid principles for Featured Products or Enterprise Solutions. Asymmetrical layouts to build visual tension."
+  },
+  "motion_and_interactions": {
+    "libraries": ["framer-motion", "lenis"],
+    "patterns": [
+      "Smooth scroll with Lenis for momentum and weight.",
+      "Scroll reveals on sections (fade in, translate-y up slightly).",
+      "One slow editorial marquee (e.g., brands or technical statement) with wide spacing.",
+      "Hover states: buttons get slight brightness bump and scale, cards lift."
+    ]
+  },
+  "components": {
+    "buttons": "Pill-shaped or rounded-full, primary buttons use blue gradient, secondary buttons use outline with navy or white depending on background.",
+    "navigation": "Sticky nav with glassmorphism (backdrop-blur-xl bg-white/80 or bg-[#071B3B]/90 depending on theme mode), mega-menu style dropdown for Products by category. Ensure no transparent background over content.",
+    "floating_actions": "Fixed floating action for Call Now, WhatsApp, Request Quote. Keep it subtle but accessible.",
+    "cards": "White background, soft ambient shadow, 20px radius. Inside: icon (lucide-react, primary blue), Heading, Text, inline CTA."
+  },
+  "pages_and_sections": {
+    "home_page": ["Hero", "Company Intro", "Business Stats", "Services", "Featured Products", "Networking Products", "Enterprise Solutions", "Industries", "Why Choose Us", "Brands", "Corporate Procurement", "Sell Old Equipment", "Business Process", "Latest Products", "Testimonials", "FAQ", "Google Map", "Contact Form"],
+    "specific_treatments": {
+      "manifesto": "Numbered manifesto chapters section (01. / 02. / 03. — editorial style).",
+      "products": "Grid of 30+ enterprise IT products with category filter. Each card: image, name, short description, key features, category badge, 'Get Quote' button.",
+      "product_photography": "Real product photography treated deliberately: spotlight lighting on clipped/framed product images.",
+      "brands": "Grid or slow marquee of vendor logos."
+    }
+  },
+  "image_urls": {
+    "logo": "https://customer-assets-jt897jd0.emergentagent.net/job_mdot-it-premium-1/artifacts/0kka1gkb_image.png",
+    "hero_backgrounds": [
+      "https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwyfHxlbnRlcnByaXNlJTIwZGF0YSUyMGNlbnRlciUyMHNlcnZlciUyMHJhY2t8ZW58MHx8fHwxNzg0MjMyMjA4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1506399558188-acca6f8cbf41?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHw0fHxlbnRlcnByaXNlJTIwZGF0YSUyMGNlbnRlciUyMHNlcnZlciUyMHJhY2t8ZW58MHx8fHwxNzg0MjMyMjA4fDA&ixlib=rb-4.1.0&q=85"
+    ],
+    "corporate_office": [
+      "https://images.unsplash.com/photo-1560264280-88b68371db39?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHBlb3BsZSUyMGNvcnBvcmF0ZSUyMG9mZmljZXxlbnwwfHx8fDE3ODQyMzIyMDh8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBidWlsZGluZyUyMGZhY2FkZXxlbnwwfHx8fDE3ODQyMzIyMDh8MA&ixlib=rb-4.1.0&q=85"
+    ],
+    "networking_hardware": [
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxuZXR3b3JrJTIwc3dpdGNoJTIwZXRoZXJuZXQlMjBjYWJsZXN8ZW58MHx8fHwxNzg0MjMyMjA4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwxfHxDaXNjbyUyMG5ldHdvcmslMjBzd2l0Y2glMjBoYXJkd2FyZXxlbnwwfHx8fDE3ODQyMzIyOTh8MA&ixlib=rb-4.1.0&q=85"
+    ],
+    "products": [
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwZGF0YSUyMGNlbnRlciUyMHNlcnZlciUyMHJhY2t8ZW58MHx8fHwxNzg0MjMyMjA4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1698668975271-2ba9a323be6b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHw0fHxuZXR3b3JrJTIwc3dpdGNoJTIwZXRoZXJuZXQlMjBjYWJsZXN8ZW58MHx8fHwxNzg0MjMyMjA4fDA&ixlib=rb-4.1.0&q=85"
+    ]
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic outputs. DO NOT create generic centered layouts or simplistic gradients.",
+    "Follow the strict color system explicitly. Do not invent generic SaaS blue or default tailwind zinc colors.",
+    "Create depth through layered design elements with z-index hierarchy and glassmorphism (backdrop-blur-xl).",
+    "Never use `transition: all` as it breaks transforms. Always add transitions for specific properties.",
+    "Do not center align the app container (.App { text-align: center; }).",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "Use 120px top/bottom spacing for sections. Generous spacing makes the site feel premium.",
+    "All interactive and key informational elements MUST include a `data-testid` attribute (kebab-case, role-based).",
+    "Do not use generic placeholder image URLs. Use the provided high-quality Unsplash image URLs.",
+    "Include a `sonner` toast for form submissions or actions."
+  ]
+}

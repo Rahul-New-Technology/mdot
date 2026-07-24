@@ -74,9 +74,6 @@ export default function Footer() {
             <div>
               © {new Date().getFullYear()} {COMPANY.name} · GST {COMPANY.gst} · All rights reserved
             </div>
-            <div>
-              Website created by Rahul Mauriya Developer. Contact: 6307795815 for making website.
-            </div>
           </div>
           <div className="flex flex-wrap gap-5 text-xs text-white/60">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>

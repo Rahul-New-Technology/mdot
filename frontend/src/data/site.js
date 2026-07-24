@@ -6,7 +6,7 @@ export const COMPANY = {
   phoneRaw: "+917704949022",
   whatsapp: "+91 77049 49022",
   whatsappRaw: "917704949022",
-  email: "mdotitsoluzione@gmail.com",
+  email: "mdotitsoluzione2024@gmail.com",
   address: "Shop No. 8-A, First Floor, Rustom Market, Mohili Village, Asalfa Link Road, Opp. Noorie Masjid, Sakinaka, Kurla, Mumbai – 400072, Maharashtra, India",
   addressShort: "Sakinaka, Kurla, Mumbai – 400072",
   hours: "Mon – Sat · 11:00 AM – 09:00 PM  ·  Sun: By Appointment",

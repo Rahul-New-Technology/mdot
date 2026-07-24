@@ -22,6 +22,7 @@ import GalleryPage from "@/pages/GalleryPage";
 import { BlogListPage, BlogPostPage } from "@/pages/BlogPages";
 import { FAQPage, TestimonialsPage } from "@/pages/SimplePages";
 import { PrivacyPage, TermsPage, DisclaimerPage } from "@/pages/LegalPages";
+import NotFoundPage from "@/pages/NotFoundPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -58,6 +59,7 @@ function Shell() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/disclaimer" element={<DisclaimerPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />

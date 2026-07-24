@@ -22,7 +22,7 @@ export default function Hero() {
       <motion.div style={{ y, scale }} className="absolute inset-0 will-change-transform">
         <img
           src="https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=srgb&fm=jpg&q=85"
-          alt="Enterprise data center"
+          alt="Enterprise data center with server racks and networking equipment"
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -61,7 +61,7 @@ export default function Hero() {
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.img
               src={COMPANY.logo}
-              alt=""
+              alt="M DOT IT SOLUZIONE logo - Enterprise IT Hardware Supplier"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 0.9, y: 0 }}
               transition={{ delay: 0.55, duration: 0.9 }}

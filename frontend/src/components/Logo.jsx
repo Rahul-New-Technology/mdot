@@ -4,10 +4,10 @@ export function Logo({ variant = "dark", size = 36 }) {
   const color = variant === "light" ? "#FFFFFF" : "#071B3B";
   const sub = variant === "light" ? "rgba(255,255,255,0.65)" : "rgba(7,27,59,0.6)";
   return (
-    <div className="flex items-center gap-3" aria-label={COMPANY.name}>
+    <div className="flex items-center gap-3" aria-label={`${COMPANY.name} logo`}>
       <img
         src={COMPANY.logo}
-        alt={`${COMPANY.name} logo`}
+        alt={`${COMPANY.name} logo - Enterprise IT Hardware Supplier`}
         loading="eager"
         width={size}
         height={size}

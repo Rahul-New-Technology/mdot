@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { WordReveal } from "@/components/Reveal";
+import SEO from "@/components/SEO";
 
-export default function PageShell({ eyebrow, title, description, children, imageUrl }) {
+export default function PageShell({ eyebrow, title, description, children, imageUrl, seoTitle, seoDescription, seoKeywords }) {
   return (
     <>
+      <SEO title={seoTitle} description={seoDescription} keywords={seoKeywords} />
       <section className="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-[#071B3B] text-white" data-testid="page-shell-hero">
         {imageUrl && (
           <div className="absolute inset-0">
-            <img src={imageUrl} alt="" className="w-full h-full object-cover opacity-30" loading="eager" />
+            <img src={imageUrl} alt="M DOT IT SOLUZIONE - Enterprise IT Hardware and Networking Solutions" className="w-full h-full object-cover opacity-30" loading="eager" />
             <div className="absolute inset-0 bg-gradient-to-br from-[#071B3B] via-[#071B3B]/85 to-[#071B3B]/70" />
           </div>
         )}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowUpRight, Mail, Phone, MapPin, Clock } from "lucide-react";
 import { COMPANY } from "@/data/site";
+import { trackGoogleAdsConversion } from "@/lib/utils";
 
 // Google Apps Script URL - Replace with your actual Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = process.env.REACT_APP_GOOGLE_SCRIPT_URL || "";
@@ -41,9 +42,12 @@ export default function ContactBlock({ compact = false, defaultProduct = "", kin
         method: "POST",
         body: formData,
       });
-
+      |
       toast.success("Grazie! Our team will get back within 4 business hours.");
       setForm({ name: "", email: "", phone: "", company: "", subject: "", product: defaultProduct, message: "" });
+      
+      // Track Google Ads conversion
+      trackGoogleAdsConversion();
     } catch (err) {
       toast.error("Please check the form and try again.");
     } finally {

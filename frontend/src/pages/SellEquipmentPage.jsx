@@ -47,6 +47,9 @@ export default function SellEquipmentPage() {
 
       toast.success("Thanks! We'll send you an offer within 48 hours.");
       setForm({ name: "", email: "", phone: "", company: "", equipment_type: "Servers", quantity: "", condition: "Good", details: "" });
+
+      // Track Google Ads conversion
+      trackGoogleAdsConversion();
     } catch (err) {
       toast.error("Please check the form and try again.");
     } finally {

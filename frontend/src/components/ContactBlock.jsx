@@ -42,7 +42,7 @@ export default function ContactBlock({ compact = false, defaultProduct = "", kin
         method: "POST",
         body: formData,
       });
-      |
+      
       toast.success("Grazie! Our team will get back within 4 business hours.");
       setForm({ name: "", email: "", phone: "", company: "", subject: "", product: defaultProduct, message: "" });
       

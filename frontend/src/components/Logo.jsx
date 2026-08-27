@@ -1,7 +1,6 @@
 import { COMPANY } from "@/data/site";
 
-const LOCAL_LOGO = "/assets/brand/logo.webp";
-const LOCAL_LOGO_PNG = "/assets/brand/logo.png";
+const LOCAL_LOGO = "/images/brand/logo.png";
 
 export function Logo({ size = 48, variant = "light", className = "" }) {
   const light = variant !== "dark";
@@ -16,19 +15,17 @@ export function Logo({ size = 48, variant = "light", className = "" }) {
         style={{ width: size, height: size }}
       >
         <img
-          src={COMPANY.logo && COMPANY.logo.endsWith(".png") ? LOCAL_LOGO : (COMPANY.logo || LOCAL_LOGO)}
+          src={COMPANY.logo || LOCAL_LOGO}
           alt=""
           width={size}
           height={size}
           loading="eager"
           decoding="async"
-          fetchPriority="low"
           className="block object-contain"
           style={{ width: "78%", height: "78%" }}
           onError={(e) => {
-            if (!e.currentTarget.src.includes(LOCAL_LOGO_PNG)) {
-              e.currentTarget.src = LOCAL_LOGO_PNG;
-            }
+            if (e.currentTarget.src.includes(LOCAL_LOGO)) return;
+            e.currentTarget.src = LOCAL_LOGO;
           }}
         />
       </span>

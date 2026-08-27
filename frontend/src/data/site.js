@@ -10,7 +10,7 @@ export const COMPANY = {
   address: "Shop No. 8-A, First Floor, Rustom Market, Mohili Village, Asalfa Link Road, Opp. Noorie Masjid, Sakinaka, Kurla, Mumbai – 400072, Maharashtra, India",
   addressShort: "Sakinaka, Kurla, Mumbai – 400072",
   hours: "Mon – Sat · 11:00 AM – 09:00 PM  ·  Sun: By Appointment",
-  logo: "/assets/brand/logo.png",
+  logo: "/images/brand/logo.png",
   gst: "Available soon — will be updated after GST registration",
   founded: 2011,
   mapEmbed:

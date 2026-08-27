@@ -1,0 +1,11 @@
+# Cloudflare Workers & Pages — used by: npx wrangler deploy
+# Dashboard: root /frontend, build: npm run build, deploy: npx wrangler deploy
+# Do not set homepage in package.json; assets are served from the domain root.
+
+name = "mdotitsoluzione"
+compatibility_date = "2025-08-01"
+
+[assets]
+directory = "./build"
+not_found_handling = "single-page-application"
+html_handling = "auto-trailing-slash"

@@ -1,0 +1,15 @@
+# robots.txt for M DOT IT SOLUZIONE
+# https://www.mdotitsoluzione.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.mdotitsoluzione.com/sitemap.xml
+
+# Crawl-delay (optional, respectful crawling)
+Crawl-delay: 1
+
+# Disallow specific paths if any
+# Disallow: /admin/
+# Disallow: /private/

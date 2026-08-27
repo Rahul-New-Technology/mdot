@@ -1,0 +1,3 @@
+# SPA fallback: serve the app for all routes so React Router can handle them.
+# This does not redirect to Home; the original URL is preserved.
+/*    /index.html   200

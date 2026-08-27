@@ -1,4 +1,3 @@
-# Static files in /images, /static, /robots.txt, etc. are served first.
-# SPA fallback for React Router is handled by wrangler.toml:
-#   not_found_handling = "single-page-application"
-# Do not use /* -> /index.html here — on Workers that can intercept image URLs.
+# SPA fallback: serve the app for all routes so React Router can handle them.
+# This does not redirect to Home; the original URL is preserved.
+/*    /index.html   200

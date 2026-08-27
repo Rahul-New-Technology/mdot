@@ -117,7 +117,7 @@ export default function Hero() {
               </span>
               <div className="hero-logo-plate">
                 <img
-                  src="/assets/brand/logo.webp"
+                  src="/images/brand/logo.webp"
                   alt="M DOT IT SOLUZIONE logo"
                   width={420}
                   height={420}
@@ -126,7 +126,7 @@ export default function Hero() {
                   className="w-[78%] h-[78%] object-contain"
                   onError={(e) => {
                     if (!e.currentTarget.src.includes("logo.png")) {
-                      e.currentTarget.src = "/assets/brand/logo.png";
+                      e.currentTarget.src = "/images/brand/logo.png";
                     }
                   }}
                 />

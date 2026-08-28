@@ -1,11 +1,18 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { ArrowUpRight, Network, Server, Monitor, Recycle, Settings, Laptop, Sparkles, Zap, Compass, Users, Award, Factory, Building2, HeartPulse, GraduationCap, ShoppingBag, Landmark, Video, Truck } from "lucide-react";
 import { Reveal, SectionHeader } from "@/components/Reveal";
 import ProductCard from "@/components/ProductCard";
 import { PRODUCTS, SERVICES, STATS, BRANDS, INDUSTRIES, WHY_US, PROCESS, TESTIMONIALS, FAQ, COMPANY, BLOG } from "@/data/site";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ContactBlock from "@/components/ContactBlock";
+=======
+import { ArrowUpRight, Network, Server, Monitor, Recycle, Settings, Laptop, Factory, Building2, HeartPulse, GraduationCap, ShoppingBag, Landmark, Video, Truck } from "lucide-react";
+import { Reveal, SectionHeader } from "@/components/Reveal";
+import { SERVICES, STATS, BRANDS, INDUSTRIES, WHY_US, PROCESS, TESTIMONIALS, FAQ } from "@/data/site";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
 
 const ICONS = { network: Network, server: Server, monitor: Monitor, recycle: Recycle, settings: Settings, laptop: Laptop };
 const INDUSTRY_ICONS = [Landmark, HeartPulse, Factory, ShoppingBag, GraduationCap, Building2, Video, Truck];
@@ -20,14 +27,22 @@ export function CompanyIntro() {
           <SectionHeader
             eyebrow="00 · The Studio"
             title={<>India's trusted supplier of Grade-A refurbished laptops and IT hardware.</>}
+<<<<<<< HEAD
             description="Since 2011 we've supplied thousands of certified refurbished Dell, HP, Lenovo laptops across India — tested by engineers, backed by warranty, delivered to your doorstep. From Mumbai startups to enterprise fleets, we help you save without compromising on quality."
+=======
+            description="M DOT IT SOLUZIONE supplies refurbished laptops, computers and IT equipment across India. Since 2011 we've supplied thousands of certified refurbished Dell, HP, Lenovo laptops — tested by engineers, backed by warranty, delivered to your doorstep. From Mumbai startups to enterprise fleets, we help you save without compromising on quality."
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
           />
           <Reveal delay={0.15}>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link to="/about" className="btn-outline-navy" data-testid="intro-cta-about">
                 About us <ArrowUpRight size={16} />
               </Link>
+<<<<<<< HEAD
               <Link to="/products?category=Laptops" className="btn-primary" data-testid="intro-cta-services">
+=======
+              <Link to="/products/laptops" className="btn-primary" data-testid="intro-cta-services">
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
                 Browse laptops <ArrowUpRight size={16} />
               </Link>
             </div>
@@ -38,9 +53,18 @@ export function CompanyIntro() {
             <div className="absolute -inset-4 brand-gradient rounded-[28px] opacity-20 blur-2xl" />
             <div className="relative rounded-[24px] overflow-hidden aspect-[4/5]">
               <img
+<<<<<<< HEAD
                 src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?crop=entropy&cs=srgb&fm=jpg&q=85"
                 alt="Refurbished laptops ready for deployment"
                 loading="lazy"
+=======
+                src="/images/hero/intro-laptop.webp"
+                alt="Refurbished laptops ready for deployment"
+                loading="lazy"
+                decoding="async"
+                width={900}
+                height={1125}
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-6 left-6 right-6 glass-navy rounded-2xl p-5 text-white">
@@ -127,6 +151,7 @@ export function ServicesSection() {
   );
 }
 
+<<<<<<< HEAD
 // SECTION: Featured Products
 export function FeaturedProducts() {
   const featured = PRODUCTS.filter((p) => p.category === "Laptops").slice(0, 6);
@@ -193,6 +218,8 @@ export function NetworkingBento() {
   );
 }
 
+=======
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
 // SECTION: Enterprise Solutions manifesto (dark)
 export function EnterpriseManifesto() {
   const chapters = [
@@ -396,6 +423,7 @@ export function ProcessSection() {
   );
 }
 
+<<<<<<< HEAD
 // SECTION: Latest products (small strip)
 export function LatestProducts() {
   const latest = PRODUCTS.filter((p) => p.category === "Laptops").slice(-6);
@@ -421,6 +449,8 @@ export function LatestProducts() {
   );
 }
 
+=======
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
 // SECTION: Testimonials
 export function TestimonialsSection() {
   return (
@@ -483,6 +513,7 @@ export function FAQSection() {
   );
 }
 
+<<<<<<< HEAD
 // SECTION: Blog preview
 export function BlogPreview() {
   return (
@@ -547,3 +578,5 @@ export function MapAndContact() {
     </section>
   );
 }
+=======
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d

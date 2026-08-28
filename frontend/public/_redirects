@@ -1,0 +1,4 @@
+# Static files in /images, /static, /robots.txt, etc. are served first.
+# SPA fallback for React Router is handled by wrangler.toml:
+#   not_found_handling = "single-page-application"
+# Do not use /* -> /index.html here — on Workers that can intercept image URLs.

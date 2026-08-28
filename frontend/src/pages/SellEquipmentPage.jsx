@@ -13,11 +13,15 @@ export default function SellEquipmentPage() {
     name: "", email: "", phone: "", company: "",
     equipment_type: "Servers", quantity: "", condition: "Good", details: "",
   });
+<<<<<<< HEAD
   const [errors, setErrors] = useState({});
+=======
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
   const [loading, setLoading] = useState(false);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
+<<<<<<< HEAD
   const validateForm = () => {
     const newErrors = {};
     
@@ -81,6 +85,10 @@ export default function SellEquipmentPage() {
       return;
     }
 
+=======
+  const submit = async (e) => {
+    e.preventDefault();
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
     setLoading(true);
     try {
       if (!GOOGLE_SCRIPT_URL) {
@@ -97,7 +105,10 @@ export default function SellEquipmentPage() {
       formData.append("phone", form.phone);
       formData.append("company", form.company);
       formData.append("equipment_type", form.equipment_type);
+<<<<<<< HEAD
       formData.append("category", form.equipment_type);
+=======
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
       formData.append("quantity", form.quantity);
       formData.append("condition", form.condition);
       formData.append("details", form.details);
@@ -110,7 +121,10 @@ export default function SellEquipmentPage() {
 
       toast.success("Thanks! We'll send you an offer within 48 hours.");
       setForm({ name: "", email: "", phone: "", company: "", equipment_type: "Servers", quantity: "", condition: "Good", details: "" });
+<<<<<<< HEAD
       setErrors({});
+=======
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
 
       // Track Google Ads conversion
       trackGoogleAdsConversion();
@@ -151,6 +165,7 @@ export default function SellEquipmentPage() {
           <div className="mt-12 card-soft p-8 md:p-10" data-testid="sell-form-wrap">
             <form onSubmit={submit} className="space-y-5" data-testid="sell-form">
               <div className="grid sm:grid-cols-2 gap-4">
+<<<<<<< HEAD
                 <Field label="Contact name *" value={form.name} onChange={set("name")} required testid="sell-name" error={errors.name} />
                 <Field label="Company *" value={form.company} onChange={set("company")} required testid="sell-company" error={errors.company} />
               </div>
@@ -162,6 +177,19 @@ export default function SellEquipmentPage() {
                 <Select label="Equipment type *" value={form.equipment_type} onChange={set("equipment_type")} options={["Servers", "Networking", "Storage", "Laptops", "Workstations", "Security", "Switches", "Mixed"]} testid="sell-type" error={errors.equipment_type} />
                 <Field label="Quantity *" value={form.quantity} onChange={set("quantity")} required placeholder="e.g. 24 units" testid="sell-quantity" error={errors.quantity} />
                 <Select label="Condition *" value={form.condition} onChange={set("condition")} options={["Working", "Good", "Fair", "Broken/parts"]} testid="sell-condition" error={errors.condition} />
+=======
+                <Field label="Contact name *" value={form.name} onChange={set("name")} required testid="sell-name" />
+                <Field label="Company *" value={form.company} onChange={set("company")} required testid="sell-company" />
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <Field label="Email *" type="email" value={form.email} onChange={set("email")} required testid="sell-email" />
+                <Field label="Phone" value={form.phone} onChange={set("phone")} testid="sell-phone" />
+              </div>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <Select label="Equipment type *" value={form.equipment_type} onChange={set("equipment_type")} options={["Servers", "Networking", "Storage", "Laptops", "Workstations", "Mixed"]} testid="sell-type" />
+                <Field label="Quantity *" value={form.quantity} onChange={set("quantity")} required placeholder="e.g. 24 units" testid="sell-quantity" />
+                <Select label="Condition *" value={form.condition} onChange={set("condition")} options={["Working", "Good", "Fair", "Broken/parts"]} testid="sell-condition" />
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
               </div>
               <div>
                 <label className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#2E3440]/60 block mb-2">Asset list / details *</label>
@@ -171,10 +199,16 @@ export default function SellEquipmentPage() {
                   value={form.details}
                   onChange={set("details")}
                   placeholder="Make, model, quantity, serials if handy, and pickup location."
+<<<<<<< HEAD
                   className={`w-full bg-[#F5F7FA] border focus:border-[#0066FF] focus:bg-white rounded-2xl px-5 py-4 text-sm outline-none transition-colors resize-none ${errors.details ? 'border-red-500' : 'border-transparent'}`}
                   data-testid="sell-details"
                 />
                 {errors.details && <p className="text-red-500 text-xs mt-1">{errors.details}</p>}
+=======
+                  className="w-full bg-[#F5F7FA] border border-transparent focus:border-[#0066FF] focus:bg-white rounded-2xl px-5 py-4 text-sm outline-none transition-colors resize-none"
+                  data-testid="sell-details"
+                />
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
               </div>
               <button type="submit" disabled={loading} className="btn-primary w-full sm:w-auto" data-testid="sell-submit">
                 {loading ? "Sending…" : "Send for valuation"} <ArrowUpRight size={16} />
@@ -187,7 +221,11 @@ export default function SellEquipmentPage() {
   );
 }
 
+<<<<<<< HEAD
 function Field({ label, value, onChange, type = "text", required = false, placeholder, testid, error }) {
+=======
+function Field({ label, value, onChange, type = "text", required = false, placeholder, testid }) {
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
   return (
     <div>
       <label className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#2E3440]/60 block mb-2">{label}</label>
@@ -197,29 +235,46 @@ function Field({ label, value, onChange, type = "text", required = false, placeh
         onChange={onChange}
         required={required}
         placeholder={placeholder}
+<<<<<<< HEAD
         className={`w-full bg-[#F5F7FA] border focus:border-[#0066FF] focus:bg-white rounded-full px-5 py-3 text-sm outline-none transition-colors ${error ? 'border-red-500' : 'border-transparent'}`}
         data-testid={testid}
       />
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
+=======
+        className="w-full bg-[#F5F7FA] border border-transparent focus:border-[#0066FF] focus:bg-white rounded-full px-5 py-3 text-sm outline-none transition-colors"
+        data-testid={testid}
+      />
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
     </div>
   );
 }
 
+<<<<<<< HEAD
 function Select({ label, value, onChange, options, testid, error }) {
+=======
+function Select({ label, value, onChange, options, testid }) {
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
   return (
     <div>
       <label className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#2E3440]/60 block mb-2">{label}</label>
       <select
         value={value}
         onChange={onChange}
+<<<<<<< HEAD
         className={`w-full bg-[#F5F7FA] border focus:border-[#0066FF] focus:bg-white rounded-full px-5 py-3 text-sm outline-none transition-colors appearance-none ${error ? 'border-red-500' : 'border-transparent'}`}
+=======
+        className="w-full bg-[#F5F7FA] border border-transparent focus:border-[#0066FF] focus:bg-white rounded-full px-5 py-3 text-sm outline-none transition-colors appearance-none"
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
         data-testid={testid}
       >
         {options.map((o) => (
           <option key={o} value={o}>{o}</option>
         ))}
       </select>
+<<<<<<< HEAD
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
+=======
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
     </div>
   );
 }

@@ -10,6 +10,11 @@
 
 # production
 /build
+<<<<<<< HEAD
+=======
+.wrangler
+.dev.vars
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
 
 # misc
 .DS_Store

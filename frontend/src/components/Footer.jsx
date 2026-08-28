@@ -26,7 +26,10 @@ export default function Footer() {
               <li><Link to="/industries" className="hover:text-white transition-colors">Industries</Link></li>
               <li><Link to="/why-choose-us" className="hover:text-white transition-colors">Why Choose Us</Link></li>
               <li><Link to="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
+<<<<<<< HEAD
               <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+=======
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
             </ul>
           </div>
 
@@ -34,6 +37,12 @@ export default function Footer() {
             <div className="font-mono text-xs uppercase tracking-[0.16em] text-[#25B5FF]/80 mb-5">Solutions</div>
             <ul className="space-y-3 text-sm text-white/70">
               <li><Link to="/products" className="hover:text-white transition-colors">All Products</Link></li>
+<<<<<<< HEAD
+=======
+              <li><Link to="/products/laptops" className="hover:text-white transition-colors">Laptops</Link></li>
+              <li><Link to="/products/desktops" className="hover:text-white transition-colors">Desktops</Link></li>
+              <li><Link to="/products/servers" className="hover:text-white transition-colors">Servers</Link></li>
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
               <li><Link to="/corporate-solutions" className="hover:text-white transition-colors">Corporate Solutions</Link></li>
               <li><Link to="/sell-equipment" className="hover:text-white transition-colors">Sell Used IT</Link></li>
               <li><Link to="/request-quote" className="hover:text-white transition-colors">Request a Quote</Link></li>
@@ -74,9 +83,12 @@ export default function Footer() {
             <div>
               © {new Date().getFullYear()} {COMPANY.name} · GST {COMPANY.gst} · All rights reserved
             </div>
+<<<<<<< HEAD
             <div className="text-white/40">
               Designed & Developed by Rahul Kumar | GrowthAdda Media Team | <a href="tel:+916307795815" className="hover:text-white transition-colors">📞 +91 63077 95815</a>
             </div>
+=======
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
           </div>
           <div className="flex flex-wrap gap-5 text-xs text-white/60">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>

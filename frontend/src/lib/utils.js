@@ -10,3 +10,21 @@ export function trackGoogleAdsConversion() {
     window.gtag_report_conversion();
   }
 }
+<<<<<<< HEAD
+=======
+
+export function trackGoogleAdsCallConversion() {
+  try {
+    if (typeof window !== "undefined" && typeof window.gtag_report_call_conversion === "function") {
+      window.gtag_report_call_conversion();
+    }
+  } catch (error) {
+    console.warn("Google Ads call conversion tracking failed:", error);
+  }
+}
+
+export function inferProductBrand(name = "") {
+  const brands = ["Cisco", "Dell", "HPE", "HP", "Lenovo", "Apple", "Fortinet", "Synology", "Microsoft", "Juniper", "Aruba", "MikroTik"];
+  return brands.find((b) => name.toLowerCase().includes(b.toLowerCase())) || null;
+}
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d

@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { WordReveal } from "@/components/Reveal";
 import SEO from "@/components/SEO";
+<<<<<<< HEAD
+=======
+import { sizedUnsplash } from "@/lib/unsplash";
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
 
 export default function PageShell({ eyebrow, title, description, children, imageUrl, seoTitle, seoDescription, seoKeywords }) {
   return (
@@ -9,7 +13,20 @@ export default function PageShell({ eyebrow, title, description, children, image
       <section className="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-[#071B3B] text-white" data-testid="page-shell-hero">
         {imageUrl && (
           <div className="absolute inset-0">
+<<<<<<< HEAD
             <img src={imageUrl} alt="M DOT IT SOLUZIONE - Enterprise IT Hardware and Networking Solutions" className="w-full h-full object-cover opacity-30" loading="eager" />
+=======
+            <img
+              src={sizedUnsplash(imageUrl, { w: 1400, q: 70 })}
+              alt="M DOT IT SOLUZIONE - Enterprise IT Hardware and Networking Solutions"
+              className="w-full h-full object-cover opacity-30"
+              width={1400}
+              height={700}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
             <div className="absolute inset-0 bg-gradient-to-br from-[#071B3B] via-[#071B3B]/85 to-[#071B3B]/70" />
           </div>
         )}

@@ -6,8 +6,13 @@ const SITE_URL = "https://www.mdotitsoluzione.com";
 
 const PAGE_META = {
   "/": {
+<<<<<<< HEAD
     title: "Buy & Sell IT Hardware in Mumbai | M DOT IT SOLUZIONE - Refurbished Laptops, Servers, Networking",
     description: "M DOT IT SOLUZIONE buys and sells refurbished laptops, servers, desktops, networking equipment, routers, switches, workstations, and IT hardware across Mumbai, Navi Mumbai, Thane, and India. Trusted IT hardware supplier since 2011.",
+=======
+    title: "Buy & Sell IT Hardware in India | M DOT IT SOLUZIONE - Refurbished Laptops, Servers, Networking",
+    description: "M DOT IT SOLUZIONE supplies refurbished laptops, computers and IT equipment across India. Buy and sell servers, desktops, networking, routers, switches and workstations from our Mumbai HQ — trusted since 2011.",
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
     keywords: "IT Hardware Mumbai, Used Servers Mumbai, Buy Used Laptop Mumbai, Refurbished Laptop Mumbai, Cisco Switch Supplier Mumbai, Server Dealer Mumbai, Workstation Supplier Mumbai, IT Equipment Buyer Mumbai, E-Waste IT Asset Disposal Mumbai, Router Supplier Mumbai"
   },
   "/about": {
@@ -97,14 +102,24 @@ const PAGE_META = {
   }
 };
 
+<<<<<<< HEAD
 export default function SEO({ title, description, keywords, image = null }) {
+=======
+export default function SEO({ title, description, keywords, image = null, noIndex = false }) {
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
   const { pathname } = useLocation();
   const meta = PAGE_META[pathname] || PAGE_META["/"];
   const pageTitle = title || meta.title;
   const pageDescription = description || meta.description;
   const pageKeywords = keywords || meta.keywords;
+<<<<<<< HEAD
   const pageImage = image || "https://customer-assets-jt897jd0.emergentagent.net/job_mdot-it-premium-1/artifacts/0kka1gkb_image.png";
   const canonicalUrl = `${SITE_URL}${pathname}`;
+=======
+  const rawImage = image || `${SITE_URL}/images/hero/hero-d.webp`;
+  const pageImage = rawImage.startsWith("http") ? rawImage : `${SITE_URL}${rawImage}`;
+  const canonicalUrl = pathname === "/" ? `${SITE_URL}/` : `${SITE_URL}${pathname}`;
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
 
   return (
     <Helmet>
@@ -112,6 +127,10 @@ export default function SEO({ title, description, keywords, image = null }) {
       <meta name="description" content={pageDescription} />
       <meta name="keywords" content={pageKeywords} />
       <link rel="canonical" href={canonicalUrl} />
+<<<<<<< HEAD
+=======
+      {noIndex && <meta name="robots" content="noindex, follow" />}
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
       
       {/* Open Graph */}
       <meta property="og:type" content="website" />
@@ -119,6 +138,10 @@ export default function SEO({ title, description, keywords, image = null }) {
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={pageImage} />
+<<<<<<< HEAD
+=======
+      <meta property="og:image:alt" content={pageTitle} />
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
       <meta property="og:site_name" content={COMPANY.name} />
       <meta property="og:locale" content="en_IN" />
       

@@ -7,16 +7,25 @@ import { trackGoogleAdsConversion } from "@/lib/utils";
 // Google Apps Script URL - Replace with your actual Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = process.env.REACT_APP_GOOGLE_SCRIPT_URL || "";
 
+<<<<<<< HEAD
 export default function ContactBlock({ compact = false, defaultProduct = "", category = "", kind = "contact" }) {
   const [form, setForm] = useState({
     name: "", email: "", phone: "", company: "",
     subject: "", product: defaultProduct || category, message: "",
   });
   const [errors, setErrors] = useState({});
+=======
+export default function ContactBlock({ compact = false, defaultProduct = "", kind = "contact" }) {
+  const [form, setForm] = useState({
+    name: "", email: "", phone: "", company: "",
+    subject: "", product: defaultProduct, message: "",
+  });
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
   const [loading, setLoading] = useState(false);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
+<<<<<<< HEAD
   const validateForm = () => {
     const newErrors = {};
     
@@ -58,6 +67,10 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
       return;
     }
 
+=======
+  const submit = async (e) => {
+    e.preventDefault();
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
     setLoading(true);
     try {
       if (!GOOGLE_SCRIPT_URL) {
@@ -75,7 +88,10 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
       formData.append("company", form.company);
       formData.append("subject", form.subject);
       formData.append("product", form.product);
+<<<<<<< HEAD
       formData.append("category", category || form.product);
+=======
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
       formData.append("message", form.message);
       formData.append("timestamp", new Date().toISOString());
 
@@ -85,8 +101,12 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
       });
       
       toast.success("Grazie! Our team will get back within 4 business hours.");
+<<<<<<< HEAD
       setForm({ name: "", email: "", phone: "", company: "", subject: "", product: defaultProduct || category, message: "" });
       setErrors({});
+=======
+      setForm({ name: "", email: "", phone: "", company: "", subject: "", product: defaultProduct, message: "" });
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
       
       // Track Google Ads conversion
       trackGoogleAdsConversion();
@@ -134,6 +154,7 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
 
       <form onSubmit={submit} className="space-y-4" data-testid="contact-form">
         <div className="grid sm:grid-cols-2 gap-4">
+<<<<<<< HEAD
           <Field label="Your name" value={form.name} onChange={set("name")} required testid="contact-name" error={errors.name} />
           <Field label="Company" value={form.company} onChange={set("company")} testid="contact-company" error={errors.company} />
         </div>
@@ -145,6 +166,19 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
           <Field label="Product of interest" value={form.product} onChange={set("product")} testid="contact-product" error={errors.product} />
         )}
         <Field label="Subject" value={form.subject} onChange={set("subject")} testid="contact-subject" error={errors.subject} />
+=======
+          <Field label="Your name" value={form.name} onChange={set("name")} required testid="contact-name" />
+          <Field label="Company" value={form.company} onChange={set("company")} testid="contact-company" />
+        </div>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Field label="Email" type="email" value={form.email} onChange={set("email")} required testid="contact-email" />
+          <Field label="Phone" value={form.phone} onChange={set("phone")} testid="contact-phone" />
+        </div>
+        {kind !== "contact" && (
+          <Field label="Product of interest" value={form.product} onChange={set("product")} testid="contact-product" />
+        )}
+        <Field label="Subject" value={form.subject} onChange={set("subject")} testid="contact-subject" />
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
         <div>
           <label className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#2E3440]/60 block mb-2">
             How can we help?
@@ -154,10 +188,16 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
             rows={4}
             value={form.message}
             onChange={set("message")}
+<<<<<<< HEAD
             className={`w-full bg-[#F5F7FA] border focus:border-[#0066FF] focus:bg-white rounded-2xl px-5 py-4 text-sm outline-none transition-colors resize-none ${errors.message ? 'border-red-500' : 'border-transparent'}`}
             data-testid="contact-message"
           />
           {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+=======
+            className="w-full bg-[#F5F7FA] border border-transparent focus:border-[#0066FF] focus:bg-white rounded-2xl px-5 py-4 text-sm outline-none transition-colors resize-none"
+            data-testid="contact-message"
+          />
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
         </div>
         <button type="submit" disabled={loading} className="btn-primary w-full sm:w-auto" data-testid="contact-submit">
           {loading ? "Sending…" : "Send message"} <ArrowUpRight size={16} />
@@ -167,7 +207,11 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
   );
 }
 
+<<<<<<< HEAD
 function Field({ label, value, onChange, type = "text", required = false, testid, error }) {
+=======
+function Field({ label, value, onChange, type = "text", required = false, testid }) {
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
   return (
     <div>
       <label className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#2E3440]/60 block mb-2">{label}{required && " *"}</label>
@@ -176,10 +220,16 @@ function Field({ label, value, onChange, type = "text", required = false, testid
         value={value}
         onChange={onChange}
         required={required}
+<<<<<<< HEAD
         className={`w-full bg-[#F5F7FA] border focus:border-[#0066FF] focus:bg-white rounded-full px-5 py-3 text-sm outline-none transition-colors ${error ? 'border-red-500' : 'border-transparent'}`}
         data-testid={testid}
       />
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
+=======
+        className="w-full bg-[#F5F7FA] border border-transparent focus:border-[#0066FF] focus:bg-white rounded-full px-5 py-3 text-sm outline-none transition-colors"
+        data-testid={testid}
+      />
+>>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
     </div>
   );
 }

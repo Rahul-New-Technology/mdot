@@ -50,6 +50,52 @@ export const STATS = [
   { value: "99.98%", label: "SLA Uptime" },
 ];
 
+export const WHY_US = [
+  {
+    n: "01",
+    title: "Engineer-led delivery",
+    desc: "Every deployment is scoped and supervised by certified engineers — not sales staff. We speak your language."
+  },
+  {
+    n: "02",
+    title: "Vendor-neutral approach",
+    desc: "We're not tied to any single vendor. We recommend what works for your infrastructure, not what hits our quota."
+  },
+  {
+    n: "03",
+    title: "Accountability",
+    desc: "When we say it will be delivered, tested, and online — that's what happens. No excuses, no finger-pointing."
+  },
+  {
+    n: "04",
+    title: "Transparent pricing",
+    desc: "No hidden fees, no surprise add-ons. What we quote is what you pay — delivered to your door."
+  }
+];
+
+export const PROCESS = [
+  {
+    n: "01",
+    title: "Discovery call",
+    desc: "We understand your requirements, infrastructure constraints, and budget — not just a shopping list."
+  },
+  {
+    n: "02",
+    title: "Technical proposal",
+    desc: "Our engineers scope the solution with exact specifications, compatibility checks, and deployment planning."
+  },
+  {
+    n: "03",
+    title: "Procurement & testing",
+    desc: "Hardware is sourced, tested, and validated in our Mumbai facility before delivery to your site."
+  },
+  {
+    n: "04",
+    title: "Deployment & handover",
+    desc: "On-site installation, configuration, and documentation transfer — with post-deployment support."
+  }
+];
+
 export const SERVICES = [
   {
     icon: "laptop",
@@ -529,6 +575,73 @@ export const BLOG_POSTS = [
   }
 ];
 
+export const BRANDS = [
+  "Cisco",
+  "Dell",
+  "HPE",
+  "Lenovo",
+  "Juniper",
+  "Aruba",
+  "MikroTik",
+  "Fortinet",
+  "NetApp",
+  "VMware",
+  "Microsoft",
+  "Intel",
+  "AMD",
+  "Samsung",
+  "Western Digital",
+  "Seagate"
+];
+
+export const INDUSTRIES = [
+  {
+    icon: "building",
+    title: "Banking & Finance",
+    desc: "Secure, compliant infrastructure for financial institutions and fintech companies."
+  },
+  {
+    icon: "heart",
+    title: "Healthcare",
+    desc: "Reliable systems for hospitals, clinics, and healthcare providers with data protection."
+  },
+  {
+    icon: "graduation-cap",
+    title: "Education",
+    desc: "Affordable, scalable IT solutions for schools, universities, and educational institutions."
+  },
+  {
+    icon: "factory",
+    title: "Manufacturing",
+    desc: "Industrial-grade hardware for manufacturing plants and production facilities."
+  },
+  {
+    icon: "shopping-cart",
+    title: "Retail",
+    desc: "Point-of-sale systems, networking, and infrastructure for retail operations."
+  },
+  {
+    icon: "shield",
+    title: "Government",
+    desc: "Secure, certified IT solutions for government agencies and public sector organizations."
+  },
+  {
+    icon: "tv",
+    title: "Media & Entertainment",
+    desc: "High-performance workstations and storage for media production and broadcasting."
+  },
+  {
+    icon: "truck",
+    title: "Logistics",
+    desc: "Tracking systems, networking, and infrastructure for logistics and supply chain operations."
+  }
+];
+
+export function categoryNameToSlug(categoryName) {
+  if (!categoryName) return "";
+  return categoryName.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+}
+
 export const FAQ_ITEMS = [
   {
     question: "What is the warranty on refurbished equipment?",
@@ -555,97 +668,3 @@ export const FAQ_ITEMS = [
     answer: "Yes, we ship across India with reliable logistics partners. We also offer on-site installation services in major metro cities including Delhi, Bangalore, Hyderabad, and Chennai."
   }
 ];
-
-export const INDUSTRIES = [
-  {
-    title: "Banking & Finance",
-    desc: "PCI-DSS compliant infrastructure for trading floors, ATMs, and branch networks with zero-downtime SLAs."
-  },
-  {
-    title: "Healthcare",
-    desc: "HIPAA-compliant systems for hospitals, clinics, and diagnostic centers with data security and reliability."
-  },
-  {
-    title: "Manufacturing",
-    desc: "Industrial-grade hardware for factory automation, supply chain systems, and quality control environments."
-  },
-  {
-    title: "Retail",
-    desc: "POS systems, inventory management, and customer analytics infrastructure for multi-location retail operations."
-  },
-  {
-    title: "Education",
-    desc: "Smart classroom solutions, campus networks, and learning management systems for universities and schools."
-  },
-  {
-    title: "Government",
-    desc: "AgID-compliant infrastructure for public sector projects with security clearances and audit trails."
-  },
-  {
-    title: "Media & Entertainment",
-    desc: "High-performance workstations for video editing, 3D rendering, and broadcast infrastructure."
-  },
-  {
-    title: "Logistics",
-    desc: "Fleet management systems, warehouse automation, and supply chain tracking solutions."
-  }
-];
-
-export const WHY_US = [
-  {
-    title: "Vendor-Neutral Approach",
-    desc: "We recommend the best solution for your needs, not tied to any particular manufacturer."
-  },
-  {
-    title: "Engineer-Led Delivery",
-    desc: "Every engagement is led by certified engineers with hands-on implementation experience."
-  },
-  {
-    title: "Accountability & SLA",
-    desc: "99.98% uptime SLA with clear escalation paths and performance guarantees."
-  },
-  {
-    title: "Transparent Pricing",
-    desc: "No hidden costs, clear quotations, and flexible payment terms for enterprise clients."
-  }
-];
-
-export const PROCESS = [
-  {
-    step: "01",
-    title: "Consultation",
-    desc: "We analyze your requirements and propose the optimal solution."
-  },
-  {
-    step: "02",
-    title: "Configuration",
-    desc: "Our engineers configure and test the equipment before delivery."
-  },
-  {
-    step: "03",
-    title: "Deployment",
-    desc: "On-site installation with minimal disruption to your operations."
-  },
-  {
-    step: "04",
-    title: "Support",
-    desc: "Ongoing technical support and maintenance to ensure reliability."
-  }
-];
-
-export const BRANDS = [
-  { name: "Cisco", tier: "Premier Partner" },
-  { name: "Dell", tier: "Titanium Partner" },
-  { name: "HPE", tier: "Platinum Partner" },
-  { name: "Lenovo", tier: "Gold Partner" },
-  { name: "Juniper", tier: "Select Partner" },
-  { name: "Fortinet", tier: "Authorized Partner" }
-];
-
-export const FAQ = FAQ_ITEMS;
-
-export const BLOG = BLOG_POSTS;
-
-export function categoryNameToSlug(categoryName) {
-  return categoryName.toLowerCase().replace(/\s+/g, '-');
-}

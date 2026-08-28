@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, PhoneCall } from "lucide-react";
 import { Link } from "react-router-dom";
-import { WordReveal } from "./Reveal";
 import { COMPANY } from "../data/site";
 import { trackGoogleAdsCallConversion } from "../lib/utils";
 
@@ -106,7 +105,7 @@ export default function Hero() {
           </div>
 
           <div className="hidden lg:flex justify-center" data-testid="hero-logo">
-            <div className="hero-logo-stage" aria-hidden="false">
+            <div className="hero-logo-stage scale-[2.75]" aria-hidden="false">
               <span className="hero-logo-ring" />
               <span className="hero-logo-ring hero-logo-ring-2" />
               <span className="hero-logo-ring hero-logo-ring-3" />
@@ -120,11 +119,11 @@ export default function Hero() {
                 <img
                   src="/images/brand/logo.webp"
                   alt="M DOT IT SOLUZIONE logo"
-                  width={420}
-                  height={420}
+                  width={1200}
+                  height={1200}
                   loading="eager"
                   decoding="async"
-                  className="w-[78%] h-[78%] object-contain"
+                  className="w-full h-full object-contain rounded-full"
                   onError={(e) => {
                     if (!e.currentTarget.src.includes("logo.png")) {
                       e.currentTarget.src = "/images/brand/logo.png";

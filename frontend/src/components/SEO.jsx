@@ -114,7 +114,7 @@ export default function SEO({ title, description, keywords, image = null, noInde
       <meta name="keywords" content={pageKeywords} />
       <link rel="canonical" href={canonicalUrl} />
       {noIndex && <meta name="robots" content="noindex, follow" />}
-      
+
       {/* Open Graph */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />

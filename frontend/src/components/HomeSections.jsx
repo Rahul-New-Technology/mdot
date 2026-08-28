@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Network, Server, Monitor, Recycle, Settings, Laptop, Factory, Building2, HeartPulse, GraduationCap, ShoppingBag, Landmark, Video, Truck } from "lucide-react";
 import { Reveal, SectionHeader } from "./Reveal";
-import { SERVICES, STATS, BRANDS, WHY_US, PROCESS, TESTIMONIALS, FAQ_ITEMS, INDUSTRIES } from "../data/site";
+import { SERVICES, STATS, BRANDS, INDUSTRIES, WHY_US, PROCESS, TESTIMONIALS, FAQ_ITEMS } from "../data/site";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 const ICONS = { network: Network, server: Server, monitor: Monitor, recycle: Recycle, settings: Settings, laptop: Laptop };

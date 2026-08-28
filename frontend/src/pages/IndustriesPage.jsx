@@ -1,7 +1,6 @@
 import PageShell from "../components/PageShell";
 import { Reveal } from "../components/Reveal";
 import { INDUSTRIES } from "../data/site";
-
 import { Landmark, HeartPulse, Factory, ShoppingBag, GraduationCap, Building2, Video, Truck, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 

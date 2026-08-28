@@ -96,27 +96,24 @@ let webpackConfig = {
     },
   },
   webpack: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
     configure: (webpackConfig) => {
-      // Add alias for @ imports to support path mapping
-      webpackConfig.resolve.alias = {
-        ...webpackConfig.resolve.alias,
-        '@': path.resolve(__dirname, 'src'),
-      };
-
       if (process.env.NODE_ENV === "production") {
         webpackConfig.devtool = false;
       }
 
       // Add ignored patterns to reduce watched directories
-      webpackConfig.watchOptions = {
-        ...webpackConfig.watchOptions,
-        ignored: [
-          '**/node_modules/**',
-          '**/.git/**',
-          '**/build/**',
-          '**/dist/**',
-          '**/coverage/**',
-          '**/public/**',
+        webpackConfig.watchOptions = {
+          ...webpackConfig.watchOptions,
+          ignored: [
+            '**/node_modules/**',
+            '**/.git/**',
+            '**/build/**',
+            '**/dist/**',
+            '**/coverage/**',
+            '**/public/**',
         ],
       };
 

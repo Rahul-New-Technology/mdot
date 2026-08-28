@@ -1,7 +1,7 @@
 import PageShell from "../components/PageShell";
 import { Reveal } from "../components/Reveal";
 import { Link, useParams } from "react-router-dom";
-import { BLOG } from "../data/site";
+import { BLOG_POSTS } from "../data/site";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export function BlogListPage() {
@@ -14,7 +14,7 @@ export function BlogListPage() {
     >
       <section className="bg-white section-pad">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-6">
-          {BLOG.map((b, i) => (
+          {BLOG_POSTS.map((b, i) => (
             <Reveal key={b.slug} delay={(i % 2) * 0.05}>
               <Link to={`/blog/${b.slug}`} className="group block card-soft overflow-hidden" data-testid={`blog-item-${b.slug}`}>
                 <div className="aspect-[16/10] overflow-hidden">
@@ -41,7 +41,7 @@ export function BlogListPage() {
 
 export function BlogPostPage() {
   const { slug } = useParams();
-  const post = BLOG.find((b) => b.slug === slug);
+  const post = BLOG_POSTS.find((b) => b.slug === slug);
   if (!post) return (
     <PageShell eyebrow="Not found" title="Article not found." description="It may have been moved.">
       <section className="bg-white section-pad">

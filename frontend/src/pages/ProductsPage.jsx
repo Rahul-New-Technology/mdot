@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import PageShell from "@/components/PageShell";
-import ProductCard from "@/components/ProductCard";
-import { PRODUCTS, CATEGORIES } from "@/data/site";
+import PageShell from "../components/PageShell";
+import ProductCard from "../components/ProductCard";
+import { PRODUCTS, CATEGORIES } from "../data/site";
 import { Search } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 

@@ -1,18 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-import { ArrowUpRight, Network, Server, Monitor, Recycle, Settings, Laptop, Sparkles, Zap, Compass, Users, Award, Factory, Building2, HeartPulse, GraduationCap, ShoppingBag, Landmark, Video, Truck } from "lucide-react";
-import { Reveal, SectionHeader } from "@/components/Reveal";
-import ProductCard from "@/components/ProductCard";
-import { PRODUCTS, SERVICES, STATS, BRANDS, INDUSTRIES, WHY_US, PROCESS, TESTIMONIALS, FAQ, COMPANY, BLOG } from "@/data/site";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import ContactBlock from "@/components/ContactBlock";
-=======
 import { ArrowUpRight, Network, Server, Monitor, Recycle, Settings, Laptop, Factory, Building2, HeartPulse, GraduationCap, ShoppingBag, Landmark, Video, Truck } from "lucide-react";
-import { Reveal, SectionHeader } from "@/components/Reveal";
-import { SERVICES, STATS, BRANDS, INDUSTRIES, WHY_US, PROCESS, TESTIMONIALS, FAQ } from "@/data/site";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
+import { Reveal, SectionHeader } from "./Reveal";
+import { SERVICES, STATS, BRANDS, WHY_US, PROCESS, TESTIMONIALS, FAQ_ITEMS, INDUSTRIES } from "../data/site";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 const ICONS = { network: Network, server: Server, monitor: Monitor, recycle: Recycle, settings: Settings, laptop: Laptop };
 const INDUSTRY_ICONS = [Landmark, HeartPulse, Factory, ShoppingBag, GraduationCap, Building2, Video, Truck];
@@ -27,22 +18,14 @@ export function CompanyIntro() {
           <SectionHeader
             eyebrow="00 · The Studio"
             title={<>India's trusted supplier of Grade-A refurbished laptops and IT hardware.</>}
-<<<<<<< HEAD
-            description="Since 2011 we've supplied thousands of certified refurbished Dell, HP, Lenovo laptops across India — tested by engineers, backed by warranty, delivered to your doorstep. From Mumbai startups to enterprise fleets, we help you save without compromising on quality."
-=======
             description="M DOT IT SOLUZIONE supplies refurbished laptops, computers and IT equipment across India. Since 2011 we've supplied thousands of certified refurbished Dell, HP, Lenovo laptops — tested by engineers, backed by warranty, delivered to your doorstep. From Mumbai startups to enterprise fleets, we help you save without compromising on quality."
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
           />
           <Reveal delay={0.15}>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link to="/about" className="btn-outline-navy" data-testid="intro-cta-about">
                 About us <ArrowUpRight size={16} />
               </Link>
-<<<<<<< HEAD
-              <Link to="/products?category=Laptops" className="btn-primary" data-testid="intro-cta-services">
-=======
               <Link to="/products/laptops" className="btn-primary" data-testid="intro-cta-services">
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
                 Browse laptops <ArrowUpRight size={16} />
               </Link>
             </div>
@@ -53,18 +36,12 @@ export function CompanyIntro() {
             <div className="absolute -inset-4 brand-gradient rounded-[28px] opacity-20 blur-2xl" />
             <div className="relative rounded-[24px] overflow-hidden aspect-[4/5]">
               <img
-<<<<<<< HEAD
-                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?crop=entropy&cs=srgb&fm=jpg&q=85"
-                alt="Refurbished laptops ready for deployment"
-                loading="lazy"
-=======
                 src="/images/hero/intro-laptop.webp"
                 alt="Refurbished laptops ready for deployment"
                 loading="lazy"
                 decoding="async"
                 width={900}
                 height={1125}
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-6 left-6 right-6 glass-navy rounded-2xl p-5 text-white">
@@ -151,75 +128,6 @@ export function ServicesSection() {
   );
 }
 
-<<<<<<< HEAD
-// SECTION: Featured Products
-export function FeaturedProducts() {
-  const featured = PRODUCTS.filter((p) => p.category === "Laptops").slice(0, 6);
-  return (
-    <section className="bg-[#F5F7FA] section-pad" data-testid="section-featured-products">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
-          <SectionHeader
-            eyebrow="02 · Refurbished Laptops"
-            title={<>Grade-A refurbished laptops · tested, certified, ready to deploy.</>}
-          />
-          <Link to="/products?category=Laptops" className="btn-outline-navy w-fit" data-testid="featured-view-all">
-            View all laptops <ArrowUpRight size={16} />
-          </Link>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featured.map((p, i) => (
-            <ProductCard key={p.id} product={p} index={i} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// SECTION: Laptop Showcase bento
-export function NetworkingBento() {
-  const laptops = PRODUCTS.filter((p) => p.category === "Laptops").slice(0, 4);
-  return (
-    <section className="bg-white section-pad" data-testid="section-networking">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
-        <SectionHeader
-          eyebrow="03 · Laptop Showcase"
-          title={<>Dell, HP, Lenovo, Apple — premium refurbished laptops for every need.</>}
-          description="From ultralight business notebooks to powerful mobile workstations, all tested and certified for enterprise deployment."
-        />
-        <div className="mt-16 grid grid-cols-6 grid-rows-2 gap-5 h-[520px] md:h-[560px]">
-          <Reveal className="col-span-6 md:col-span-4 row-span-2">
-            <div className="relative w-full h-full rounded-[24px] overflow-hidden group">
-              <img src={laptops[0]?.image} alt={laptops[0]?.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#071B3B] via-[#071B3B]/50 to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8 text-white">
-                <div className="chip chip-navy w-fit">{laptops[0]?.category}</div>
-                <h3 className="mt-4 font-display text-3xl md:text-4xl font-semibold leading-tight">{laptops[0]?.name}</h3>
-                <p className="mt-3 text-white/70 max-w-md">{laptops[0]?.tagline}</p>
-              </div>
-            </div>
-          </Reveal>
-          {laptops.slice(1).map((p, i) => (
-            <Reveal key={p.id} delay={0.05 + i * 0.04} className={i === 0 ? "col-span-3 md:col-span-2 row-span-1" : i === 1 ? "col-span-3 md:col-span-2 row-span-1" : "col-span-6 md:col-span-2 row-span-1"}>
-              <div className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#F5F7FA] group">
-                <img src={p.image} alt={p.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-white/60" />
-                <div className="relative p-6 h-full flex flex-col justify-end">
-                  <div className="chip w-fit">{p.category}</div>
-                  <h4 className="mt-3 font-display text-lg font-semibold text-[#071B3B]">{p.name}</h4>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-=======
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
 // SECTION: Enterprise Solutions manifesto (dark)
 export function EnterpriseManifesto() {
   const chapters = [
@@ -423,34 +331,6 @@ export function ProcessSection() {
   );
 }
 
-<<<<<<< HEAD
-// SECTION: Latest products (small strip)
-export function LatestProducts() {
-  const latest = PRODUCTS.filter((p) => p.category === "Laptops").slice(-6);
-  return (
-    <section className="bg-[#F5F7FA] section-pad" data-testid="section-latest">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
-          <SectionHeader
-            eyebrow="09 · More Laptops"
-            title={<>Browse our extensive refurbished laptop inventory.</>}
-          />
-          <Link to="/products?category=Laptops" className="btn-outline-navy w-fit" data-testid="latest-view-all">
-            Browse full catalog <ArrowUpRight size={16} />
-          </Link>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {latest.map((p, i) => (
-            <ProductCard key={p.id} product={p} index={i} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-=======
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
 // SECTION: Testimonials
 export function TestimonialsSection() {
   return (
@@ -496,7 +376,7 @@ export function FAQSection() {
         />
         <Reveal>
           <Accordion type="single" collapsible className="w-full" data-testid="faq-accordion">
-            {FAQ.map((f, i) => (
+            {FAQ_ITEMS.map((f, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-b border-[#071B3B]/10">
                 <AccordionTrigger className="font-display text-lg font-semibold text-[#071B3B] py-6 hover:no-underline text-left" data-testid={`faq-q-${i}`}>
                   {f.q}
@@ -512,71 +392,3 @@ export function FAQSection() {
     </section>
   );
 }
-
-<<<<<<< HEAD
-// SECTION: Blog preview
-export function BlogPreview() {
-  return (
-    <section className="bg-white section-pad" data-testid="section-blog">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
-          <SectionHeader
-            eyebrow="12 · Field Notes"
-            title={<>From the workshop floor.</>}
-          />
-          <Link to="/blog" className="btn-outline-navy w-fit" data-testid="blog-view-all">
-            All articles <ArrowUpRight size={16} />
-          </Link>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {BLOG.map((b, i) => (
-            <Reveal key={b.slug} delay={i * 0.04}>
-              <Link to={`/blog/${b.slug}`} className="group block card-soft overflow-hidden" data-testid={`blog-card-${i}`}>
-                <div className="aspect-[4/3] overflow-hidden bg-[#F5F7FA]">
-                  <img src={b.image} alt={b.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.16em] text-[#2E3440]/50">
-                    <span className="text-[#0066FF]">{b.tag}</span>
-                    <span>·</span>
-                    <span>{b.date}</span>
-                  </div>
-                  <h3 className="mt-3 font-display text-lg font-semibold text-[#071B3B] leading-snug group-hover:text-[#0066FF] transition-colors">{b.title}</h3>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// SECTION: Map + Contact
-export function MapAndContact() {
-  return (
-    <section className="bg-[#F5F7FA] section-pad" data-testid="section-contact">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
-        <SectionHeader
-          eyebrow="13 · Get in touch"
-          title={<>Start a conversation.</>}
-          description="Mumbai HQ. Pan-India delivery. Site surveys in 5 business days."
-        />
-        <div className="mt-16 grid lg:grid-cols-2 gap-6">
-          <div className="rounded-[24px] overflow-hidden aspect-video lg:aspect-auto lg:min-h-[520px] bg-[#071B3B]">
-            <iframe
-              title="Map to M DOT IT SOLUZIONE"
-              src={COMPANY.mapEmbed}
-              className="w-full h-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-          <ContactBlock />
-        </div>
-      </div>
-    </section>
-  );
-}
-=======
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d

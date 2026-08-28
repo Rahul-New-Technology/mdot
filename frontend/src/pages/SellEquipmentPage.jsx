@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { toast } from "sonner";
-import PageShell from "@/components/PageShell";
-import { Reveal, SectionHeader } from "@/components/Reveal";
+import PageShell from "../components/PageShell";
+import { Reveal, SectionHeader } from "../components/Reveal";
 import { ArrowUpRight, ShieldCheck, Recycle, Leaf } from "lucide-react";
-import { trackGoogleAdsConversion } from "@/lib/utils";
+import { trackGoogleAdsConversion } from "../lib/utils";
 
 // Google Apps Script URL - Replace with your actual Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = process.env.REACT_APP_GOOGLE_SCRIPT_URL || "";

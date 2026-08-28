@@ -1,5 +1,5 @@
-import PageShell from "@/components/PageShell";
-import { COMPANY } from "@/data/site";
+import PageShell from "../components/PageShell";
+import { COMPANY } from "../data/site";
 
 function Legal({ title, sections }) {
   return (

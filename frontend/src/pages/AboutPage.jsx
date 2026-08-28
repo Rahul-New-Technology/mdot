@@ -1,6 +1,6 @@
-import PageShell from "@/components/PageShell";
-import { Reveal, SectionHeader } from "@/components/Reveal";
-import { STATS, WHY_US, PROCESS, COMPANY } from "@/data/site";
+import PageShell from "../components/PageShell";
+import { Reveal, SectionHeader } from "../components/Reveal";
+import { STATS, WHY_US, PROCESS, COMPANY } from "../data/site";
 import { Award, Users, Globe2, Zap } from "lucide-react";
 
 export default function AboutPage() {

@@ -1,6 +1,6 @@
-import PageShell from "@/components/PageShell";
-import { Reveal, SectionHeader } from "@/components/Reveal";
-import { BRANDS } from "@/data/site";
+import PageShell from "../components/PageShell";
+import { Reveal, SectionHeader } from "../components/Reveal";
+import { BRANDS } from "../data/site";
 
 export default function BrandsPage() {
   return (

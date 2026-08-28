@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, MessageCircle, FileText, Plus, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { COMPANY } from "@/data/site";
+import { COMPANY } from "../data/site";
 
 export default function FloatingActions() {
   const [open, setOpen] = useState(false);

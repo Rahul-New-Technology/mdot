@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowUpRight, Mail, Phone, MapPin, Clock } from "lucide-react";
-import { COMPANY } from "@/data/site";
-import { trackGoogleAdsConversion } from "@/lib/utils";
+import { COMPANY } from "../data/site";
+import { trackGoogleAdsConversion } from "../lib/utils";
 
 // Google Apps Script URL - Replace with your actual Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = process.env.REACT_APP_GOOGLE_SCRIPT_URL || "";

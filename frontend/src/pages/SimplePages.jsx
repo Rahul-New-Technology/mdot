@@ -1,5 +1,5 @@
-import PageShell from "@/components/PageShell";
-import { FAQSection, TestimonialsSection } from "@/components/HomeSections";
+import PageShell from "../components/PageShell";
+import { FAQSection, TestimonialsSection } from "../components/HomeSections";
 
 export function FAQPage() {
   return (

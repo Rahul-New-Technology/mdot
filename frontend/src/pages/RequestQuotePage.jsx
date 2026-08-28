@@ -1,5 +1,5 @@
-import PageShell from "@/components/PageShell";
-import ContactBlock from "@/components/ContactBlock";
+import PageShell from "../components/PageShell";
+import ContactBlock from "../components/ContactBlock";
 import { useSearchParams } from "react-router-dom";
 
 export default function RequestQuotePage() {

@@ -1,6 +1,6 @@
-import { SectionHeader } from "@/components/Reveal";
-import ContactBlock from "@/components/ContactBlock";
-import LocationMap from "@/components/LocationMap";
+import { SectionHeader } from "./Reveal";
+import ContactBlock from "./ContactBlock";
+import LocationMap from "./LocationMap";
 
 export default function MapAndContact() {
   return (

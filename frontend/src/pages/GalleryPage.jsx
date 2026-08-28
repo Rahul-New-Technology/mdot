@@ -1,9 +1,6 @@
-import PageShell from "@/components/PageShell";
-import { Reveal } from "@/components/Reveal";
-<<<<<<< HEAD
-=======
-import { sizedUnsplash } from "@/lib/unsplash";
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
+import PageShell from "../components/PageShell";
+import { Reveal } from "../components/Reveal";
+import { sizedUnsplash } from "../lib/unsplash";
 
 const GALLERY = [
   "https://images.unsplash.com/photo-1506399558188-acca6f8cbf41?crop=entropy&cs=srgb&fm=jpg&q=85",
@@ -45,11 +42,7 @@ export default function GalleryPage() {
             {GALLERY.map((src, i) => (
               <Reveal key={i} delay={(i % 6) * 0.03}>
                 <figure className="mb-5 break-inside-avoid group relative overflow-hidden rounded-[20px] bg-[#F5F7FA]">
-<<<<<<< HEAD
-                  <img src={src} alt={CAPTIONS[i]} loading="lazy" className={`w-full ${i % 3 === 0 ? "aspect-[4/5]" : i % 3 === 1 ? "aspect-square" : "aspect-[5/4]"} object-cover group-hover:scale-105 transition-transform duration-700`} />
-=======
                   <img src={sizedUnsplash(src, { w: 800, q: 70 })} alt={CAPTIONS[i]} loading="lazy" decoding="async" width={800} height={800} className={`w-full ${i % 3 === 0 ? "aspect-[4/5]" : i % 3 === 1 ? "aspect-square" : "aspect-[5/4]"} object-cover group-hover:scale-105 transition-transform duration-700`} />
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
                   <figcaption className="absolute bottom-0 left-0 right-0 p-4 text-white text-xs font-mono uppercase tracking-[0.16em] bg-gradient-to-t from-[#071B3B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     {CAPTIONS[i]}
                   </figcaption>

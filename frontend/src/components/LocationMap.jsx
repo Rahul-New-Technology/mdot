@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { COMPANY } from "@/data/site";
+import { COMPANY } from "../data/site";
 
 const MAP_EMBED =
   COMPANY.mapEmbed ||

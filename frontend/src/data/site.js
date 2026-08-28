@@ -555,3 +555,97 @@ export const FAQ_ITEMS = [
     answer: "Yes, we ship across India with reliable logistics partners. We also offer on-site installation services in major metro cities including Delhi, Bangalore, Hyderabad, and Chennai."
   }
 ];
+
+export const INDUSTRIES = [
+  {
+    title: "Banking & Finance",
+    desc: "PCI-DSS compliant infrastructure for trading floors, ATMs, and branch networks with zero-downtime SLAs."
+  },
+  {
+    title: "Healthcare",
+    desc: "HIPAA-compliant systems for hospitals, clinics, and diagnostic centers with data security and reliability."
+  },
+  {
+    title: "Manufacturing",
+    desc: "Industrial-grade hardware for factory automation, supply chain systems, and quality control environments."
+  },
+  {
+    title: "Retail",
+    desc: "POS systems, inventory management, and customer analytics infrastructure for multi-location retail operations."
+  },
+  {
+    title: "Education",
+    desc: "Smart classroom solutions, campus networks, and learning management systems for universities and schools."
+  },
+  {
+    title: "Government",
+    desc: "AgID-compliant infrastructure for public sector projects with security clearances and audit trails."
+  },
+  {
+    title: "Media & Entertainment",
+    desc: "High-performance workstations for video editing, 3D rendering, and broadcast infrastructure."
+  },
+  {
+    title: "Logistics",
+    desc: "Fleet management systems, warehouse automation, and supply chain tracking solutions."
+  }
+];
+
+export const WHY_US = [
+  {
+    title: "Vendor-Neutral Approach",
+    desc: "We recommend the best solution for your needs, not tied to any particular manufacturer."
+  },
+  {
+    title: "Engineer-Led Delivery",
+    desc: "Every engagement is led by certified engineers with hands-on implementation experience."
+  },
+  {
+    title: "Accountability & SLA",
+    desc: "99.98% uptime SLA with clear escalation paths and performance guarantees."
+  },
+  {
+    title: "Transparent Pricing",
+    desc: "No hidden costs, clear quotations, and flexible payment terms for enterprise clients."
+  }
+];
+
+export const PROCESS = [
+  {
+    step: "01",
+    title: "Consultation",
+    desc: "We analyze your requirements and propose the optimal solution."
+  },
+  {
+    step: "02",
+    title: "Configuration",
+    desc: "Our engineers configure and test the equipment before delivery."
+  },
+  {
+    step: "03",
+    title: "Deployment",
+    desc: "On-site installation with minimal disruption to your operations."
+  },
+  {
+    step: "04",
+    title: "Support",
+    desc: "Ongoing technical support and maintenance to ensure reliability."
+  }
+];
+
+export const BRANDS = [
+  { name: "Cisco", tier: "Premier Partner" },
+  { name: "Dell", tier: "Titanium Partner" },
+  { name: "HPE", tier: "Platinum Partner" },
+  { name: "Lenovo", tier: "Gold Partner" },
+  { name: "Juniper", tier: "Select Partner" },
+  { name: "Fortinet", tier: "Authorized Partner" }
+];
+
+export const FAQ = FAQ_ITEMS;
+
+export const BLOG = BLOG_POSTS;
+
+export function categoryNameToSlug(categoryName) {
+  return categoryName.toLowerCase().replace(/\s+/g, '-');
+}

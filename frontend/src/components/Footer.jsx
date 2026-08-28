@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, ArrowUpRight, Linkedin, Instagram } from "lucide-react";
-import { COMPANY } from "@/data/site";
-import { Logo } from "@/components/Logo";
+import { COMPANY } from "../data/site";
+import { Logo } from "./Logo";
 
 export default function Footer() {
   return (

@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight, Check, PhoneCall } from "lucide-react";
-import NotFoundPage from "@/pages/NotFoundPage";
-import SEO from "@/components/SEO";
+import NotFoundPage from "./NotFoundPage";
+import SEO from "../components/SEO";
 import {
   COMPANY,
   categoryNameToSlug,
   getProductById,
   getProductGallery,
-} from "@/data/site";
-import { trackGoogleAdsCallConversion } from "@/lib/utils";
+} from "../data/site";
+import { trackGoogleAdsCallConversion } from "../lib/utils";
 
 export default function ProductDetailPage() {
   const { categorySlug, productId } = useParams();

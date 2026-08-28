@@ -1,6 +1,6 @@
-import PageShell from "@/components/PageShell";
-import { Reveal, SectionHeader } from "@/components/Reveal";
-import { SERVICES } from "@/data/site";
+import PageShell from "../components/PageShell";
+import { Reveal, SectionHeader } from "../components/Reveal";
+import { SERVICES } from "../data/site";
 import { Network, Server, Monitor, Recycle, Settings, Laptop, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 

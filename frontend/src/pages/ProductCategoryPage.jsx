@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import PageShell from "@/components/PageShell";
-import ProductCard from "@/components/ProductCard";
-import ContactBlock from "@/components/ContactBlock";
-import { PRODUCTS, CATEGORIES, COMPANY } from "@/data/site";
+import PageShell from "../components/PageShell";
+import ProductCard from "../components/ProductCard";
+import ContactBlock from "../components/ContactBlock";
+import { PRODUCTS, CATEGORIES, COMPANY } from "../data/site";
 import { Search, Phone, ArrowUpRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 

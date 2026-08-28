@@ -1,10 +1,5 @@
-import PageShell from "@/components/PageShell";
-<<<<<<< HEAD
-import ContactBlock from "@/components/ContactBlock";
-import { MapAndContact } from "@/components/HomeSections";
-=======
-import MapAndContact from "@/components/MapAndContact";
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
+import PageShell from "../components/PageShell";
+import MapAndContact from "../components/MapAndContact";
 
 export default function ContactPage() {
   return (

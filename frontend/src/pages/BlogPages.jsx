@@ -1,7 +1,7 @@
-import PageShell from "@/components/PageShell";
-import { Reveal } from "@/components/Reveal";
+import PageShell from "../components/PageShell";
+import { Reveal } from "../components/Reveal";
 import { Link, useParams } from "react-router-dom";
-import { BLOG } from "@/data/site";
+import { BLOG } from "../data/site";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export function BlogListPage() {

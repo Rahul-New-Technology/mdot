@@ -1,5 +1,5 @@
-import PageShell from "@/components/PageShell";
-import { WhyUsSection, ProcessSection, TestimonialsSection } from "@/components/HomeSections";
+import PageShell from "../components/PageShell";
+import { WhyUsSection, ProcessSection, TestimonialsSection } from "../components/HomeSections";
 
 export default function WhyPage() {
   return (

@@ -1,6 +1,6 @@
 import { PhoneCall } from "lucide-react";
-import { COMPANY } from "@/data/site";
-import { trackGoogleAdsCallConversion } from "@/lib/utils";
+import { COMPANY } from "../data/site";
+import { trackGoogleAdsCallConversion } from "../lib/utils";
 
 export default function CallNow({ variant = "hero", className = "" }) {
   const base =

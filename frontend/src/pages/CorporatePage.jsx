@@ -1,6 +1,6 @@
-import PageShell from "@/components/PageShell";
-import { Reveal, SectionHeader } from "@/components/Reveal";
-import ContactBlock from "@/components/ContactBlock";
+import PageShell from "../components/PageShell";
+import { Reveal, SectionHeader } from "../components/Reveal";
+import ContactBlock from "../components/ContactBlock";
 import { Check, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 

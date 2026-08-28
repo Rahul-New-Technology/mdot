@@ -72,8 +72,7 @@
     "start": "craco start",
     "build": "craco build",
     "postbuild": "node -e \"require('fs').copyFileSync('build/index.html','build/404.html')\"",
-    "test": "craco test",
-    "validate-package": "node -e \"try{JSON.parse(require('fs').readFileSync('package.json','utf8'));console.log('✓ package.json is valid JSON');process.exit(0)}catch(e){console.error('✗ package.json has JSON syntax error:',e.message);process.exit(1)}\""
+    "test": "craco test"
   },
   "browserslist": {
     "production": [

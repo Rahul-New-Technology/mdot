@@ -29,19 +29,14 @@ function makeDevServerV5Compatible(devServerConfig) {
         : "http";
   compatibleConfig.headers = {
     ...compatibleConfig.headers,
-<<<<<<< HEAD
     "Cross-Origin-Resource-Policy": "same-origin",
     "Cross-Origin-Embedder-Policy": "require-corp",
     "Cross-Origin-Opener-Policy": "same-origin",
-=======
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
     "X-Content-Type-Options": "nosniff",
     "X-Frame-Options": "SAMEORIGIN",
     "X-XSS-Protection": "1; mode=block",
     "Referrer-Policy": "strict-origin-when-cross-origin",
-<<<<<<< HEAD
     "Permissions-Policy": "geolocation=(), microphone=(), camera=(), payment=()"
-=======
   };
 
   compatibleConfig.historyApiFallback = {
@@ -51,7 +46,6 @@ function makeDevServerV5Compatible(devServerConfig) {
     ...(typeof compatibleConfig.historyApiFallback === "object"
       ? compatibleConfig.historyApiFallback
       : {}),
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
   };
 
   if (onBeforeSetupMiddleware || setupMiddlewares) {
@@ -106,12 +100,9 @@ let webpackConfig = {
       '@': path.resolve(__dirname, 'src'),
     },
     configure: (webpackConfig) => {
-<<<<<<< HEAD
-=======
       if (process.env.NODE_ENV === "production") {
         webpackConfig.devtool = false;
       }
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
 
       // Add ignored patterns to reduce watched directories
         webpackConfig.watchOptions = {

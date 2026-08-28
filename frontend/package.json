@@ -2,14 +2,11 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
-=======
   "sideEffects": [
     "*.css",
     "src/index.js",
     "src/index.css"
   ],
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
   "dependencies": {
     "@hookform/resolvers": "5.0.1",
     "@radix-ui/react-accordion": "1.2.8",
@@ -74,10 +71,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-<<<<<<< HEAD
-=======
     "postbuild": "node -e \"require('fs').copyFileSync('build/index.html','build/404.html')\"",
->>>>>>> fba28f1927745d4e7ea5a9f5be5d999464fa178d
     "test": "craco test"
   },
   "browserslist": {

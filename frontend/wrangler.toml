@@ -9,3 +9,7 @@ compatibility_date = "2025-08-01"
 directory = "./build"
 not_found_handling = "single-page-application"
 html_handling = "auto-trailing-slash"
+
+[build]
+command = "npm ci && npm run build"
+cwd = "."

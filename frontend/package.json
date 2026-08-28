@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "_comment": "Clean package.json with no merge conflicts - Cloudflare deployment fix",
   "sideEffects": [
     "*.css",
     "src/index.js",

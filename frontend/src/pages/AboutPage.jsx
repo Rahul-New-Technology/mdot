@@ -1,7 +1,15 @@
 import PageShell from "../components/PageShell";
 import { Reveal, SectionHeader } from "../components/Reveal";
-import { STATS, WHY_US, COMPANY } from "../data/site";
+import { STATS, COMPANY } from "../data/site";
 import { Award, Users, Globe2, Zap } from "lucide-react";
+
+const WHY_US = [
+  { n: "01", title: "Vendor-Neutral", desc: "We don't push brands. We push the right solution for your specific requirements." },
+  { n: "02", title: "Engineer-Led", desc: "Your account is managed by a senior engineer, not a sales quota-chaser." },
+  { n: "03", title: "Accountability", desc: "When things go wrong, we fix them. No finger-pointing, no excuses." },
+  { n: "04", title: "Transparent Pricing", desc: "No hidden margins, no surprise charges. What we quote is what you pay." },
+  { n: "05", title: "99.98% SLA", desc: "We put our uptime guarantee in writing. And we back it with credits if we miss it." }
+];
 
 export default function AboutPage() {
   return (

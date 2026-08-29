@@ -1,6 +1,10 @@
 import PageShell from "../components/PageShell";
 import { Reveal, SectionHeader } from "../components/Reveal";
-import { BRANDS } from "../data/site";
+
+const BRANDS = [
+  "Cisco", "Dell", "HPE", "Lenovo", "Juniper", "Aruba", "MikroTik", "Fortinet",
+  "Huawei", "NetApp", "IBM", "Oracle", "VMware", "Microsoft", "Intel", "AMD"
+];
 
 export default function BrandsPage() {
   return (

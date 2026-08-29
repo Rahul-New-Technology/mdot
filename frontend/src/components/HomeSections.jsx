@@ -2,7 +2,38 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Network, Server, Monitor, Recycle, Settings, Laptop, Factory, Building2, HeartPulse, GraduationCap, ShoppingBag, Landmark, Video, Truck } from "lucide-react";
 import { Reveal, SectionHeader } from "./Reveal";
-import { SERVICES, STATS, BRANDS, INDUSTRIES, WHY_US, PROCESS, TESTIMONIALS, FAQ_ITEMS } from "../data/site";
+import { SERVICES, STATS, TESTIMONIALS, FAQ_ITEMS } from "../data/site";
+
+const BRANDS = [
+  "Cisco", "Dell", "HPE", "Lenovo", "Juniper", "Aruba", "MikroTik", "Fortinet",
+  "Huawei", "NetApp", "IBM", "Oracle", "VMware", "Microsoft", "Intel", "AMD"
+];
+
+const INDUSTRIES = [
+  { title: "Banking & Finance", desc: "Secure, compliant infrastructure for financial institutions with 99.98% uptime SLA." },
+  { title: "Healthcare", desc: "HIPAA-compliant IT solutions for hospitals, clinics, and healthcare providers." },
+  { title: "Manufacturing", desc: "Industrial-grade systems for production lines, automation, and IoT integration." },
+  { title: "Retail", desc: "POS systems, inventory management, and customer experience infrastructure." },
+  { title: "Education", desc: "Campus-wide networking, computer labs, and e-learning platforms." },
+  { title: "Government", desc: "Secure, scalable infrastructure for public sector organizations." },
+  { title: "Media & Entertainment", desc: "High-performance systems for content creation, editing, and broadcasting." },
+  { title: "Logistics", desc: "Tracking systems, warehouse automation, and supply chain IT solutions." }
+];
+
+const WHY_US = [
+  { n: "01", title: "Vendor-Neutral", desc: "We don't push brands. We push the right solution for your specific requirements." },
+  { n: "02", title: "Engineer-Led", desc: "Your account is managed by a senior engineer, not a sales quota-chaser." },
+  { n: "03", title: "Accountability", desc: "When things go wrong, we fix them. No finger-pointing, no excuses." },
+  { n: "04", title: "Transparent Pricing", desc: "No hidden margins, no surprise charges. What we quote is what you pay." },
+  { n: "05", title: "99.98% SLA", desc: "We put our uptime guarantee in writing. And we back it with credits if we miss it." }
+];
+
+const PROCESS = [
+  { n: "01", title: "Discovery", desc: "We understand your requirements, infrastructure, and constraints." },
+  { n: "02", title: "Solution Design", desc: "Our engineers design a solution that fits your needs and budget." },
+  { n: "03", title: "Implementation", desc: "We deploy, configure, and test the solution with minimal disruption." },
+  { n: "04", title: "Support", desc: "Ongoing support, maintenance, and optimization to ensure success." }
+];
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 const ICONS = { network: Network, server: Server, monitor: Monitor, recycle: Recycle, settings: Settings, laptop: Laptop };

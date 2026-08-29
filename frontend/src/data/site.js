@@ -39,7 +39,6 @@ export const NAV = [
   { label: "Brands", to: "/brands" },
   { label: "Industries", to: "/industries" },
   { label: "Sell Equipment", to: "/sell-equipment" },
-  { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -48,52 +47,6 @@ export const STATS = [
   { value: "2,400+", label: "Enterprise Clients" },
   { value: "38", label: "Vendor Partnerships" },
   { value: "99.98%", label: "SLA Uptime" },
-];
-
-export const WHY_US = [
-  {
-    n: "01",
-    title: "Engineer-led delivery",
-    desc: "Every deployment is scoped and supervised by certified engineers — not sales staff. We speak your language."
-  },
-  {
-    n: "02",
-    title: "Vendor-neutral approach",
-    desc: "We're not tied to any single vendor. We recommend what works for your infrastructure, not what hits our quota."
-  },
-  {
-    n: "03",
-    title: "Accountability",
-    desc: "When we say it will be delivered, tested, and online — that's what happens. No excuses, no finger-pointing."
-  },
-  {
-    n: "04",
-    title: "Transparent pricing",
-    desc: "No hidden fees, no surprise add-ons. What we quote is what you pay — delivered to your door."
-  }
-];
-
-export const PROCESS = [
-  {
-    n: "01",
-    title: "Discovery call",
-    desc: "We understand your requirements, infrastructure constraints, and budget — not just a shopping list."
-  },
-  {
-    n: "02",
-    title: "Technical proposal",
-    desc: "Our engineers scope the solution with exact specifications, compatibility checks, and deployment planning."
-  },
-  {
-    n: "03",
-    title: "Procurement & testing",
-    desc: "Hardware is sourced, tested, and validated in our Mumbai facility before delivery to your site."
-  },
-  {
-    n: "04",
-    title: "Deployment & handover",
-    desc: "On-site installation, configuration, and documentation transfer — with post-deployment support."
-  }
 ];
 
 export const SERVICES = [
@@ -139,6 +92,10 @@ export const CATEGORIES = [
   "Switches",
   "Accessories",
 ];
+
+export function categoryNameToSlug(categoryName) {
+  return categoryName.toLowerCase().replace(/\s+/g, "-");
+}
 
 // Local image paths - place your images in public/images/{category}/ folders
 // Example: Place laptop images in public/images/laptops/
@@ -547,100 +504,6 @@ export const TESTIMONIALS = [
     avatar: "/images/testimonials/amit.jpg"
   }
 ];
-
-export const BLOG_POSTS = [
-  {
-    slug: "why-refurbished-it-hardware",
-    title: "Why Refurbished IT Hardware Makes Business Sense",
-    excerpt: "Discover how certified refurbished equipment can save your business up to 70% on IT costs while maintaining performance and reliability.",
-    date: "2025-01-15",
-    category: "IT Solutions",
-    image: "/images/blog/refurbished-hardware.jpg"
-  },
-  {
-    slug: "server-buyback-guide",
-    title: "Complete Guide to Server Buyback Programs",
-    excerpt: "Learn how to maximize value when retiring old servers, from data security to environmental compliance and buyback process.",
-    date: "2025-01-10",
-    category: "IT Management",
-    image: "/images/blog/server-buyback.jpg"
-  },
-  {
-    slug: "networking-essentials",
-    title: "Essential Networking Equipment for Modern Offices",
-    excerpt: "A comprehensive guide to selecting the right networking equipment for your business, from switches to wireless access points.",
-    date: "2025-01-05",
-    category: "Networking",
-    image: "/images/blog/networking-essentials.jpg"
-  }
-];
-
-export const BRANDS = [
-  "Cisco",
-  "Dell",
-  "HPE",
-  "Lenovo",
-  "Juniper",
-  "Aruba",
-  "MikroTik",
-  "Fortinet",
-  "NetApp",
-  "VMware",
-  "Microsoft",
-  "Intel",
-  "AMD",
-  "Samsung",
-  "Western Digital",
-  "Seagate"
-];
-
-export const INDUSTRIES = [
-  {
-    icon: "building",
-    title: "Banking & Finance",
-    desc: "Secure, compliant infrastructure for financial institutions and fintech companies."
-  },
-  {
-    icon: "heart",
-    title: "Healthcare",
-    desc: "Reliable systems for hospitals, clinics, and healthcare providers with data protection."
-  },
-  {
-    icon: "graduation-cap",
-    title: "Education",
-    desc: "Affordable, scalable IT solutions for schools, universities, and educational institutions."
-  },
-  {
-    icon: "factory",
-    title: "Manufacturing",
-    desc: "Industrial-grade hardware for manufacturing plants and production facilities."
-  },
-  {
-    icon: "shopping-cart",
-    title: "Retail",
-    desc: "Point-of-sale systems, networking, and infrastructure for retail operations."
-  },
-  {
-    icon: "shield",
-    title: "Government",
-    desc: "Secure, certified IT solutions for government agencies and public sector organizations."
-  },
-  {
-    icon: "tv",
-    title: "Media & Entertainment",
-    desc: "High-performance workstations and storage for media production and broadcasting."
-  },
-  {
-    icon: "truck",
-    title: "Logistics",
-    desc: "Tracking systems, networking, and infrastructure for logistics and supply chain operations."
-  }
-];
-
-export function categoryNameToSlug(categoryName) {
-  if (!categoryName) return "";
-  return categoryName.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
-}
 
 export const FAQ_ITEMS = [
   {

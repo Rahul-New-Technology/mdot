@@ -6,8 +6,8 @@ const SITE_URL = "https://www.mdotitsoluzione.com";
 
 const PAGE_META = {
   "/": {
-    title: "Buy & Sell IT Hardware in India | M DOT IT SOLUZIONE - Refurbished Laptops, Servers, Networking",
-    description: "M DOT IT SOLUZIONE supplies refurbished laptops, computers and IT equipment across India. Buy and sell servers, desktops, networking, routers, switches and workstations from our Mumbai HQ — trusted since 2011.",
+    title: "Buy & Sell IT Hardware in Mumbai | M DOT IT SOLUZIONE - Refurbished Laptops, Servers, Networking",
+    description: "M DOT IT SOLUZIONE buys and sells refurbished laptops, servers, desktops, networking equipment, routers, switches, workstations, and IT hardware across Mumbai, Navi Mumbai, Thane, and India. Trusted IT hardware supplier since 2011.",
     keywords: "IT Hardware Mumbai, Used Servers Mumbai, Buy Used Laptop Mumbai, Refurbished Laptop Mumbai, Cisco Switch Supplier Mumbai, Server Dealer Mumbai, Workstation Supplier Mumbai, IT Equipment Buyer Mumbai, E-Waste IT Asset Disposal Mumbai, Router Supplier Mumbai"
   },
   "/about": {
@@ -60,11 +60,6 @@ const PAGE_META = {
     description: "View our project gallery showcasing datacenter builds, networking deployments, server installations, and IT infrastructure projects across Mumbai and India.",
     keywords: "IT Projects Gallery Mumbai, Datacenter Installation India, Network Deployment Photos, IT Infrastructure Portfolio"
   },
-  "/blog": {
-    title: "Field Notes | M DOT IT SOLUZIONE - Engineering Notes, TCO Math, Cutover Stories",
-    description: "Engineering notes, TCO calculations, and cutover war stories from our senior engineering team. Published irregularly, written by the engineers who deploy the kit.",
-    keywords: "IT Engineering Blog Mumbai, Network TCO Analysis, Datacenter Cutover Stories, IT Infrastructure Insights"
-  },
   "/faq": {
     title: "FAQ | M DOT IT SOLUZIONE - Frequently Asked Questions About IT Hardware & Services",
     description: "Everything you'd want to know before we start work: warranty, delivery, payment terms, support, and more. Precisely answered by our engineering team.",
@@ -114,7 +109,7 @@ export default function SEO({ title, description, keywords, image = null, noInde
       <meta name="keywords" content={pageKeywords} />
       <link rel="canonical" href={canonicalUrl} />
       {noIndex && <meta name="robots" content="noindex, follow" />}
-
+      
       {/* Open Graph */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />

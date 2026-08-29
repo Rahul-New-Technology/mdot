@@ -20,7 +20,6 @@ import SellEquipmentPage from "@/pages/SellEquipmentPage";
 import RequestQuotePage from "@/pages/RequestQuotePage";
 import ContactPage from "@/pages/ContactPage";
 import GalleryPage from "@/pages/GalleryPage";
-import { BlogListPage, BlogPostPage } from "@/pages/BlogPages";
 import { FAQPage, TestimonialsPage } from "@/pages/SimplePages";
 import { PrivacyPage, TermsPage, DisclaimerPage } from "@/pages/LegalPages";
 import NotFoundPage from "@/pages/NotFoundPage";
@@ -53,8 +52,6 @@ function Shell() {
           <Route path="/sell-equipment" element={<SellEquipmentPage />} />
           <Route path="/request-quote" element={<RequestQuotePage />} />
           <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/blog" element={<BlogListPage />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />

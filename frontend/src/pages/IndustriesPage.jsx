@@ -1,10 +1,60 @@
 import PageShell from "../components/PageShell";
 import { Reveal } from "../components/Reveal";
-import { INDUSTRIES } from "../data/site";
 import { Landmark, HeartPulse, Factory, ShoppingBag, GraduationCap, Building2, Video, Truck, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ICONS = [Landmark, HeartPulse, Factory, ShoppingBag, GraduationCap, Building2, Video, Truck];
+
+const INDUSTRIES = [
+  {
+    title: "Banking & Finance",
+    description: "Secure, compliant infrastructure for financial institutions with 99.98% uptime SLA.",
+    icon: Landmark,
+    link: "/contact"
+  },
+  {
+    title: "Healthcare",
+    description: "HIPAA-compliant IT solutions for hospitals, clinics, and healthcare providers.",
+    icon: HeartPulse,
+    link: "/contact"
+  },
+  {
+    title: "Manufacturing",
+    description: "Industrial-grade systems for production lines, automation, and IoT integration.",
+    icon: Factory,
+    link: "/contact"
+  },
+  {
+    title: "Retail",
+    description: "POS systems, inventory management, and customer experience infrastructure.",
+    icon: ShoppingBag,
+    link: "/contact"
+  },
+  {
+    title: "Education",
+    description: "Campus-wide networking, computer labs, and e-learning platforms.",
+    icon: GraduationCap,
+    link: "/contact"
+  },
+  {
+    title: "Government",
+    description: "Secure, scalable infrastructure for public sector organizations.",
+    icon: Building2,
+    link: "/contact"
+  },
+  {
+    title: "Media & Entertainment",
+    description: "High-performance systems for content creation, editing, and broadcasting.",
+    icon: Video,
+    link: "/contact"
+  },
+  {
+    title: "Logistics",
+    description: "Tracking systems, warehouse automation, and supply chain IT solutions.",
+    icon: Truck,
+    link: "/contact"
+  }
+];
 
 export default function IndustriesPage() {
   return (

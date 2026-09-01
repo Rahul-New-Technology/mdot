@@ -60,6 +60,11 @@ const PAGE_META = {
     description: "View our project gallery showcasing datacenter builds, networking deployments, server installations, and IT infrastructure projects across Mumbai and India.",
     keywords: "IT Projects Gallery Mumbai, Datacenter Installation India, Network Deployment Photos, IT Infrastructure Portfolio"
   },
+  "/products/desktop": {
+    title: "Buy & Sell Business Desktops | M DOT IT SOLUZIONE - Refurbished Desktops",
+    description: "Buy and sell business desktops in Mumbai. Quality checked refurbished desktops from Dell, HP, Lenovo for companies and organizations.",
+    keywords: "Business Desktops Mumbai, Refurbished Desktops India, Desktop Computers Mumbai, Used Desktops for Sale, Office Desktops Supplier"
+  },
   "/faq": {
     title: "FAQ | M DOT IT SOLUZIONE - Frequently Asked Questions About IT Hardware & Services",
     description: "Everything you'd want to know before we start work: warranty, delivery, payment terms, support, and more. Precisely answered by our engineering team.",

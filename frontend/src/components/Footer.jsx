@@ -8,8 +8,8 @@ export default function Footer() {
     <footer className="navy-bg text-white relative overflow-hidden" data-testid="site-footer">
       <div className="absolute inset-0 navy-grid-bg opacity-[0.35]" />
       <div className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full bg-[#0066FF]/20 blur-[120px]" />
-      <div className="relative max-w-[1400px] mx-auto px-5 md:px-8 pt-24 pb-10">
-        <div className="grid lg:grid-cols-[1.4fr,1fr,1fr,1fr] gap-12 pb-16">
+      <div className="relative max-w-[1400px] mx-auto px-5 md:px-8 pt-16 pb-8">
+        <div className="grid lg:grid-cols-[1.4fr,1fr,1fr,1fr] gap-12 pb-12">
           <div>
             <Logo variant="light" size={48} />
             <p className="mt-6 text-white/70 text-sm leading-relaxed max-w-sm">
@@ -22,8 +22,6 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-white/70">
               <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
-              <li><Link to="/brands" className="hover:text-white transition-colors">Brands</Link></li>
-              <li><Link to="/industries" className="hover:text-white transition-colors">Industries</Link></li>
               <li><Link to="/why-choose-us" className="hover:text-white transition-colors">Why Choose Us</Link></li>
               <li><Link to="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
               <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
@@ -35,7 +33,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-white/70">
               <li><Link to="/products" className="hover:text-white transition-colors">All Products</Link></li>
               <li><Link to="/products/laptops" className="hover:text-white transition-colors">Laptops</Link></li>
-              <li><Link to="/products/desktops" className="hover:text-white transition-colors">Desktops</Link></li>
+              <li><Link to="/products/desktop" className="hover:text-white transition-colors">Desktops</Link></li>
               <li><Link to="/products/servers" className="hover:text-white transition-colors">Servers</Link></li>
               <li><Link to="/corporate-solutions" className="hover:text-white transition-colors">Corporate Solutions</Link></li>
               <li><Link to="/sell-equipment" className="hover:text-white transition-colors">Sell Used IT</Link></li>

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageShell from "../components/PageShell";
 import ProductCard from "../components/ProductCard";
@@ -17,6 +17,7 @@ export default function ProductCategoryPage() {
   // Normalize category name (convert slug to title case)
   const normalizeCategory = (cat) => {
     if (!cat) return "All";
+    if (cat === "ram-ssd") return "RAM & SSD";
     return cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
   };
 
@@ -47,76 +48,73 @@ export default function ProductCategoryPage() {
   const getCategoryContent = (category) => {
     const content = {
       "All": {
-        title: "Enterprise IT hardware, curated by engineers.",
-        description: "Cisco, Dell, HPE, Lenovo, Juniper, Aruba, MikroTik, Fortinet — filter, compare and request a quote in seconds.",
-        buySellMessage: "Buy & Sell Enterprise IT Hardware",
-        buyDescription: "We BUY and SELL enterprise IT hardware including servers, laptops, networking equipment, and more. Quality checked equipment from leading brands with warranty.",
-        sellDescription: "Have used or surplus IT equipment? We BUY servers, laptops, networking gear, and other IT assets from businesses and organizations at competitive prices.",
+        title: "Buy & Sell Enterprise IT Hardware",
+        description: "We BUY and SELL enterprise IT hardware including servers, laptops, networking equipment, and more. Quality checked equipment from leading brands with warranty. We BUY servers, laptops, networking gear, and other IT assets from businesses and organizations at competitive prices.",
         seoTitle: "Enterprise IT Hardware in Mumbai | M DOT IT SOLUZIONE",
         seoDescription: "Buy & Sell enterprise IT hardware, servers, laptops, networking equipment in Mumbai. Quality checked equipment from Cisco, Dell, HPE, Lenovo."
       },
       "Networking": {
-        title: "Enterprise Networking Equipment",
-        description: "Routers, switches, firewalls, wireless access points, and complete networking solutions for businesses.",
-        buySellMessage: "Buy & Sell Networking Equipment",
-        buyDescription: "We BUY and SELL networking equipment including routers, switches, firewalls, wireless access points, and complete networking solutions. Quality checked from Cisco, Juniper, Aruba, MikroTik.",
-        sellDescription: "Have used or surplus networking equipment? We BUY networking gear from businesses and organizations. Get competitive prices for your used routers, switches, and firewalls.",
-        seoTitle: "Buy & Sell Networking Equipment in Mumbai | M DOT IT SOLUZIONE",
-        seoDescription: "Buy & Sell networking equipment, routers, switches, firewalls in Mumbai. Enterprise networking solutions from Cisco, Juniper, Aruba, MikroTik."
+        title: "Buy & Sell Used & Refurbished Networking Equipment",
+        description: "We BUY and SELL used and refurbished networking equipment for businesses, offices, IT companies, and data centers. We deal in routers, networking equipment, wireless equipment, network accessories, and enterprise networking hardware from leading brands. We BUY used, surplus, excess, and decommissioned networking equipment from businesses and organizations. Contact us with your equipment details and quantity.",
+        seoTitle: "Buy & Sell Used & Refurbished Networking Equipment in Mumbai | M DOT IT SOLUZIONE",
+        seoDescription: "Buy & Sell used & refurbished networking equipment, routers, switches, firewalls in Mumbai. Enterprise networking solutions from Cisco, Juniper, Aruba, MikroTik."
       },
       "Servers": {
-        title: "Enterprise Servers & Data Center Equipment",
-        description: "Rack servers, blade servers, storage arrays, and complete data center solutions for businesses.",
-        buySellMessage: "Buy & Sell Servers",
-        buyDescription: "We BUY and SELL enterprise servers including rack servers, blade servers, and data center equipment. Quality checked/refurbished servers from Dell, HPE, Lenovo with warranty.",
-        sellDescription: "Have used or surplus servers? We BUY servers from businesses and organizations for data center upgrades. Get competitive prices for your used Dell, HPE, Lenovo servers.",
-        seoTitle: "Buy & Sell Servers in Mumbai | M DOT IT SOLUZIONE",
-        seoDescription: "Buy & Sell enterprise servers, rack servers, data center equipment in Mumbai. Quality checked servers from Dell, HPE, Lenovo."
+        title: "Buy & Sell Used & Refurbished Enterprise Servers",
+        description: "We BUY and SELL used and refurbished enterprise servers including rack servers, tower servers, blade servers, and data center equipment. We offer quality-checked servers from Dell, HPE, Lenovo, and other enterprise brands with warranty. We BUY used, surplus, excess, and decommissioned servers from businesses and organizations for data center upgrades. Get competitive prices for your used Dell, HPE, and Lenovo servers.",
+        seoTitle: "Buy & Sell Used & Refurbished Servers in Mumbai | M DOT IT SOLUZIONE",
+        seoDescription: "Buy & Sell used & refurbished enterprise servers, rack servers, tower servers, blade servers in Mumbai. Quality checked servers from Dell, HPE, Lenovo."
       },
       "Storage": {
-        title: "Enterprise Storage Solutions",
-        description: "NAS, SAN, storage arrays, backup solutions, and complete storage infrastructure for businesses.",
-        buySellMessage: "Buy & Sell Storage Equipment",
-        buyDescription: "We BUY and SELL enterprise storage equipment including NAS, SAN, storage arrays, and backup solutions. Quality checked storage systems from leading brands.",
-        sellDescription: "Have used or surplus storage equipment? We BUY storage arrays and solutions from businesses. Get competitive prices for your used NAS, SAN, and storage systems.",
-        seoTitle: "Buy & Sell Storage Equipment in Mumbai | M DOT IT SOLUZIONE",
-        seoDescription: "Buy & Sell enterprise storage equipment, NAS, SAN, storage arrays in Mumbai. Quality checked storage solutions from leading brands."
+        title: "Buy & Sell Used & Refurbished Enterprise Storage",
+        description: "We BUY and SELL used and refurbished enterprise storage equipment for businesses, data centers, and IT infrastructure. We deal in enterprise storage systems, storage arrays, hard drives, storage hardware, and data center storage equipment. We BUY used, surplus, excess, and decommissioned storage equipment from businesses and organizations. Get competitive value based on brand, model, condition, and quantity.",
+        seoTitle: "Buy & Sell Used & Refurbished Storage Equipment in Mumbai | M DOT IT SOLUZIONE",
+        seoDescription: "Buy & Sell used & refurbished enterprise storage equipment, NAS, SAN, storage arrays in Mumbai. Quality checked storage solutions from leading brands."
       },
       "Workstations": {
-        title: "Professional Workstations & Desktops",
-        description: "High-performance workstations, business desktops, and complete computing solutions for professionals.",
-        buySellMessage: "Buy & Sell Workstations",
-        buyDescription: "We BUY and SELL professional workstations and business desktops. Quality checked workstations for CAD, engineering, design, and professional use from Dell, HP, Lenovo.",
-        sellDescription: "Have used or surplus workstations? We BUY workstations from businesses and organizations. Get competitive prices for your used professional workstations and desktops.",
-        seoTitle: "Buy & Sell Workstations in Mumbai | M DOT IT SOLUZIONE",
-        seoDescription: "Buy & Sell professional workstations, business desktops in Mumbai. High-performance workstations for CAD, engineering, design."
+        title: "Buy & Sell Used & Refurbished Professional Workstations",
+        description: "We BUY and SELL used and refurbished professional workstations for CAD, engineering, architecture, 3D design, video editing, and professional applications. We deal in quality-checked workstations from Dell, HP, and Lenovo. We BUY used, surplus, and excess workstations from businesses and organizations. Get competitive value for your professional workstations based on configuration, condition, and quantity.",
+        seoTitle: "Buy & Sell Used & Refurbished Professional Workstations in Mumbai | M DOT IT SOLUZIONE",
+        seoDescription: "Buy & Sell used & refurbished professional workstations, business desktops in Mumbai. High-performance workstations for CAD, engineering, design."
       },
       "Laptops": {
-        title: "Refurbished Business Laptops",
-        description: "Quality-tested refurbished laptops from Dell, HP, Lenovo, Apple for business and personal use.",
-        buySellMessage: "Buy & Sell Refurbished Laptops",
-        buyDescription: "We BUY and SELL refurbished business laptops from Dell, HP, Lenovo, Apple. Quality checked laptops with warranty for business, corporate, and personal use.",
-        sellDescription: "Have used or surplus laptops? We BUY laptops from businesses and organizations for bulk trade-in. Get competitive prices for your used Dell, HP, Lenovo, Apple laptops.",
-        seoTitle: "Buy & Sell Refurbished Laptops in Mumbai | M DOT IT SOLUZIONE",
-        seoDescription: "Buy & Sell refurbished laptops, business laptops in Mumbai. Quality checked laptops from Dell, HP, Lenovo, Apple with warranty."
+        title: "Buy & Sell Used & Refurbished Business Laptops",
+        description: "We BUY and SELL used and refurbished laptops for businesses, offices, students, organizations, and individual customers. We deal in Dell, HP, Lenovo, and other major brands with different configurations. We BUY used, surplus, and excess laptops from businesses and organizations. If your company is upgrading its systems or has unused laptops, contact us for a quote.",
+        seoTitle: "Buy & Sell Used & Refurbished Business Laptops in Mumbai | M DOT IT SOLUZIONE",
+        seoDescription: "Buy & Sell used & refurbished business laptops in Mumbai. Quality checked laptops from Dell, HP, Lenovo, Apple with warranty."
       },
       "Security": {
-        title: "Enterprise Security Equipment",
-        description: "Firewalls, security appliances, intrusion detection systems, and complete security solutions for businesses.",
-        buySellMessage: "Buy & Sell Security Equipment",
-        buyDescription: "We BUY and SELL enterprise security equipment including firewalls, security appliances, and intrusion detection systems. Quality checked from Fortinet, Cisco, Juniper.",
-        sellDescription: "Have used or surplus security equipment? We BUY security appliances from businesses. Get competitive prices for your used firewalls and security equipment.",
-        seoTitle: "Buy & Sell Security Equipment in Mumbai | M DOT IT SOLUZIONE",
-        seoDescription: "Buy & Sell enterprise security equipment, firewalls, security appliances in Mumbai. Security solutions from Fortinet, Cisco, Juniper."
+        title: "Buy & Sell Used & Refurbished IT Security Equipment",
+        description: "We BUY and SELL used and refurbished IT security and related infrastructure equipment for businesses and organizations. We BUY used, surplus, excess, and decommissioned IT security equipment from businesses and organizations. Share the equipment details, brand, model, and quantity with us.",
+        seoTitle: "Buy & Sell Used & Refurbished IT Security Equipment in Mumbai | M DOT IT SOLUZIONE",
+        seoDescription: "Buy & Sell used & refurbished enterprise security equipment, firewalls, security appliances in Mumbai. Security solutions from Fortinet, Cisco, Juniper."
       },
       "Switches": {
-        title: "Network Switches & Ethernet Solutions",
-        description: "Managed switches, PoE switches, core switches, and complete network switching solutions for businesses.",
-        buySellMessage: "Buy & Sell Network Switches",
-        buyDescription: "We BUY and SELL network switches including managed switches, PoE switches, core switches, and enterprise switching solutions. Quality checked from Cisco, HP, Aruba.",
-        sellDescription: "Have used or surplus network switches? We BUY network switches from businesses and organizations. Get competitive prices for your used managed and PoE switches.",
-        seoTitle: "Buy & Sell Network Switches in Mumbai | M DOT IT SOLUZIONE",
-        seoDescription: "Buy & Sell network switches, managed switches, PoE switches in Mumbai. Enterprise switching solutions from Cisco, HP, Aruba."
+        title: "Buy & Sell Used & Refurbished Network Switches",
+        description: "We BUY and SELL used and refurbished network switches for offices, businesses, IT companies, data centers, and enterprise networks. We deal in different brands, models, and configurations based on availability. We BUY used, surplus, excess, and decommissioned network switches from businesses and organizations. Contact us with the brand, model, quantity, and condition.",
+        seoTitle: "Buy & Sell Used & Refurbished Network Switches in Mumbai | M DOT IT SOLUZIONE",
+        seoDescription: "Buy & Sell used & refurbished network switches, managed switches, PoE switches in Mumbai. Enterprise switching solutions from Cisco, HP, Aruba."
+      },
+      "Desktop": {
+        title: "Buy & Sell Used & Refurbished Business Desktops",
+        description: "We BUY and SELL used and refurbished desktops for businesses, offices, and organizations. We deal in business desktops, office desktops, corporate IT equipment, and used desktop systems from brands such as Dell, HP, and Lenovo with different configurations. We BUY old, surplus, and decommissioned desktops from businesses. If your company is replacing computers or has unused desktop systems, contact us for a competitive quote.",
+        seoTitle: "Buy & Sell Used & Refurbished Business Desktops in Mumbai | M DOT IT SOLUZIONE",
+        seoDescription: "Buy & Sell used & refurbished business desktops in Mumbai. Quality checked desktops from Dell, HP, Lenovo."
+      },
+      "Accessories": {
+        title: "IT Accessories & Peripherals",
+        description: "Server racks, cables, peripherals, and complete accessory solutions for IT infrastructure.",
+        buySellMessage: "Buy & Sell IT Accessories",
+        buyDescription: "We BUY and SELL IT accessories including server racks, cables, and peripherals. Quality checked accessories for complete IT infrastructure solutions.",
+        sellDescription: "Have used or surplus IT accessories? We BUY IT accessories from businesses. Get competitive prices for your used server racks, cables, and peripherals.",
+        seoTitle: "Buy & Sell IT Accessories in Mumbai | M DOT IT SOLUZIONE",
+        seoDescription: "Buy & Sell IT accessories, server racks, cables, peripherals in Mumbai. Quality checked accessories for IT infrastructure."
+      },
+      "RAM & SSD": {
+        title: "Buy & Sell RAM & SSD",
+        description: "We BUY and SELL quality RAM and SSD for desktops, laptops, servers, and enterprise systems. We deal in Desktop RAM (DDR3, DDR4, DDR5), Laptop RAM (SODIMM), Server RAM (ECC RDIMM, LRDIMM), SATA SSDs, NVMe SSDs, and Enterprise SSDs. We BUY used, surplus, excess, and decommissioned RAM and SSD inventory from businesses and organizations. Contact us for competitive pricing on your memory and storage components.",
+        seoTitle: "Buy & Sell RAM & SSD in Mumbai | M DOT IT SOLUZIONE",
+        seoDescription: "Buy & Sell RAM and SSD, desktop RAM, laptop RAM, server RAM, SATA SSDs, NVMe SSDs in Mumbai. Quality checked memory and storage components."
       },
       "Accessories": {
         title: "IT Accessories & Peripherals",
@@ -134,6 +132,19 @@ export default function ProductCategoryPage() {
   const categoryContent = getCategoryContent(cat);
   const canonicalUrl = `https://www.mdotitsoluzione.com/products/${category}`;
 
+  const handleCallClick = () => {
+    try {
+      if (
+        typeof window !== "undefined" &&
+        typeof window.gtag_report_call_conversion === "function"
+      ) {
+        window.gtag_report_call_conversion();
+      }
+    } catch (error) {
+      console.warn("Google Ads call conversion tracking failed:", error);
+    }
+  };
+
   if (cat === "All") {
     return null; // This should be handled by redirect
   }
@@ -150,61 +161,46 @@ export default function ProductCategoryPage() {
         title={categoryContent.title}
         description={categoryContent.description}
         imageUrl="https://images.unsplash.com/photo-1506399558188-acca6f8cbf41?crop=entropy&cs=srgb&fm=jpg&q=85"
-      >
-        <section className="bg-gradient-to-r from-[#071B3B] to-[#0066FF] text-white section-pad">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-5 md:px-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-display font-bold mb-4">{categoryContent.buySellMessage}</h2>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Looking to {cat.toLowerCase()}?</h3>
-                    <p className="text-white/80 text-sm">{categoryContent.buyDescription}</p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Have used or surplus {cat.toLowerCase()}?</h3>
-                    <p className="text-white/80 text-sm">{categoryContent.sellDescription}</p>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-4 mt-6">
-                  <a
-                    href={`tel:${COMPANY.phoneRaw}`}
-                    className="inline-flex items-center gap-2 bg-white text-[#071B3B] px-6 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors"
-                  >
-                    <Phone size={18} />
-                    Call Now
-                  </a>
-                  <a
-                    href="/sell-equipment"
-                    className="inline-flex items-center gap-2 bg-white/20 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/30 transition-colors border border-white/30"
-                  >
-                    Sell Your {cat}
-                    <ArrowUpRight size={16} />
-                  </a>
-                </div>
-              </div>
-              <div className="hidden md:block">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <h3 className="font-semibold text-lg mb-4">Quick Contact</h3>
-                  <div className="space-y-3">
-                    <a href={`tel:${COMPANY.phoneRaw}`} className="flex items-center gap-3 hover:text-white/80 transition-colors">
-                      <Phone size={18} />
-                      <span>{COMPANY.phone}</span>
-                    </a>
-                    <div className="text-sm text-white/70">
-                      <p>Available Mon – Sat</p>
-                      <p>11:00 AM – 09:00 PM</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        customActions={
+          <div className="flex flex-wrap gap-4 mt-6">
+            <a
+              href={`tel:${COMPANY.phoneRaw}`}
+              className="inline-flex items-center gap-2 bg-white text-[#071B3B] px-6 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors"
+              onClick={handleCallClick}
+            >
+              <Phone size={18} />
+              Call Now
+            </a>
+            <Link
+              to="/sell-equipment"
+              className="inline-flex items-center gap-2 bg-white/20 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/30 transition-colors border border-white/30"
+            >
+              Sell Your {cat}
+              <ArrowUpRight size={16} />
+            </Link>
+          </div>
+        }
+        quickContact={
+          <div className="space-y-3">
+            <a
+              href={`tel:${COMPANY.phoneRaw}`}
+              className="flex items-center gap-3 hover:text-white/80 transition-colors"
+              onClick={handleCallClick}
+            >
+              <Phone size={18} />
+              <span>{COMPANY.phone}</span>
+            </a>
+            <div className="text-sm text-white/70">
+              <p>Available Mon – Sat</p>
+              <p>11:00 AM – 09:00 PM</p>
             </div>
           </div>
-        </section>
+        }
+      >
 
         <section className="bg-white section-pad" data-testid="products-catalog">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-5 md:px-8">
-            <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:items-center lg:justify-between mb-8 sm:mb-12">
+            <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:items-center lg:justify-between mb-6 sm:mb-8">
               <div className="flex flex-wrap gap-2">
                 {CATEGORIES.filter(c => c !== "All").map((c) => (
                   <button
@@ -234,35 +230,16 @@ export default function ProductCategoryPage() {
               </div>
             </div>
 
-            <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
               {list.map((p, i) => (
                 <ProductCard key={p.id} product={p} index={i} />
               ))}
             </motion.div>
             {list.length === 0 && (
-              <div className="text-center py-16 sm:py-20 text-[#2E3440]/60 text-sm sm:text-base">
+              <div className="text-center py-12 sm:py-16 text-[#2E3440]/60 text-sm sm:text-base">
                 No products match your filters. Reset and try again.
               </div>
             )}
-          </div>
-        </section>
-
-        {/* Call Now Section */}
-        <section className="bg-[#071B3B] text-white section-pad">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-5 md:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl font-display font-bold mb-4">
-              Need Help with {cat}?
-            </h2>
-            <p className="text-white/80 text-sm sm:text-base mb-6 max-w-2xl mx-auto">
-              Call our team for expert assistance, pricing, and availability information.
-            </p>
-            <a
-              href={`tel:${COMPANY.phoneRaw}`}
-              className="inline-flex items-center gap-2 bg-[#0066FF] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#0056cc] transition-colors text-lg"
-            >
-              <Phone size={20} />
-              Call Now: {COMPANY.phone}
-            </a>
           </div>
         </section>
 
@@ -278,11 +255,11 @@ export default function ProductCategoryPage() {
                 </p>
                 <div className="flex items-center gap-4 mb-6">
                   <a
-                    href={`tel:${COMPANY.phoneRaw}`}
+                    href="tel:+917704949022"
                     className="inline-flex items-center gap-2 bg-[#071B3B] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#0066FF] transition-colors"
                   >
                     <Phone size={18} />
-                    Call Now
+                    Call Now: +91 77049 49022
                   </a>
                 </div>
               </div>

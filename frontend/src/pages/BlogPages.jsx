@@ -18,7 +18,7 @@ export function BlogListPage() {
             <Reveal key={b.slug} delay={(i % 2) * 0.05}>
               <Link to={`/blog/${b.slug}`} className="group block card-soft overflow-hidden" data-testid={`blog-item-${b.slug}`}>
                 <div className="aspect-[16/10] overflow-hidden">
-                  <img src={b.image} alt={b.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={b.image} alt={b.title} loading="lazy" decoding="async" width={800} height={500} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <div className="p-8">
                   <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.16em] text-[#2E3440]/50">

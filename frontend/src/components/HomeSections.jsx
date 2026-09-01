@@ -65,15 +65,15 @@ export function CompanyIntro() {
         <Reveal delay={0.15}>
           <div className="relative">
             <div className="absolute -inset-4 brand-gradient rounded-[28px] opacity-20 blur-2xl" />
-            <div className="relative rounded-[24px] overflow-hidden aspect-[4/5]">
+            <div className="relative rounded-[24px] overflow-hidden aspect-[4/5] bg-[#F5F7FA]">
               <img
-                src="/images/hero/intro-laptop.webp"
+                src="/images/laptops/Dell1.jpg"
                 alt="Refurbished laptops ready for deployment"
                 loading="lazy"
                 decoding="async"
                 width={900}
                 height={1125}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-8"
               />
               <div className="absolute bottom-6 left-6 right-6 glass-navy rounded-2xl p-5 text-white">
                 <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#25B5FF]">Certified refurbished</div>
@@ -94,14 +94,14 @@ export function BusinessStats() {
   return (
     <section className="relative bg-[#F5F7FA] section-pad" data-testid="section-stats">
       <div className="max-w-[1400px] mx-auto px-5 md:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-10">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06}>
-              <div className="border-t border-[#071B3B]/10 pt-6" data-testid={`stat-${i}`}>
-                <div className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-[#071B3B]">
+              <div className="border-t border-[#071B3B]/10 pt-4 md:pt-6" data-testid={`stat-${i}`}>
+                <div className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-[#071B3B] leading-tight">
                   {s.value}
                 </div>
-                <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-[#2E3440]/60">
+                <div className="mt-2 md:mt-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-[#2E3440]/60 leading-relaxed">
                   {s.label}
                 </div>
               </div>

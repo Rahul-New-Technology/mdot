@@ -8,6 +8,27 @@ export default function ProductCard({ product, index = 0, categorySlug, image })
   const detailTo = `/products/${slug}/${product.id}`;
   const photo = image || product.image;
 
+  // Extract display size from features for all products
+  const extractDisplaySize = (features) => {
+    const displayFeature = features.find(f => f.includes("\"") && (f.includes("inch") || f.includes("inches")));
+    if (displayFeature) {
+      const match = displayFeature.match(/(\d+(?:\.\d+)?)\s*(?:inch|inches|\")/i);
+      if (match) {
+        return `${match[1]}-inch`;
+      }
+    }
+    return null;
+  };
+
+  const displaySize = extractDisplaySize(product.features);
+
+  // For all product cards, use contain to show full image without cropping
+  const imageObjectFit = "object-contain";
+  const imagePadding = "p-8";
+  const cardPadding = "p-6 sm:p-8";
+  const titleSize = "text-xl sm:text-2xl";
+  const aspectRatio = "aspect-[4/3]";
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -17,7 +38,7 @@ export default function ProductCard({ product, index = 0, categorySlug, image })
       className="card-soft overflow-hidden group flex flex-col"
       data-testid={`product-card-${product.id}`}
     >
-      <Link to={detailTo} className="relative aspect-[4/3] bg-[#F5F7FA] overflow-hidden block">
+      <Link to={detailTo} className={`relative ${aspectRatio} bg-[#F5F7FA] overflow-hidden block ${imagePadding}`}>
         <div className="absolute top-3 left-3 z-10 chip !bg-white/95 !text-[#0066FF] backdrop-blur text-[10px] sm:text-xs">
           {product.category}
         </div>
@@ -28,7 +49,7 @@ export default function ProductCard({ product, index = 0, categorySlug, image })
           decoding="async"
           width={640}
           height={480}
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+          className={`w-full h-full ${imageObjectFit} transition-transform duration-700 ease-out group-hover:scale-[1.03]`}
           onError={(e) => {
             if (e.currentTarget.dataset.fallbackApplied) return;
             e.currentTarget.dataset.fallbackApplied = "1";
@@ -47,9 +68,9 @@ export default function ProductCard({ product, index = 0, categorySlug, image })
         <div className="absolute inset-0 bg-gradient-to-t from-[#071B3B]/30 via-transparent to-transparent" />
       </Link>
 
-      <div className="p-5 sm:p-6 md:p-7 flex flex-col flex-1">
+      <div className={`${cardPadding} flex flex-col flex-1`}>
         <Link to={detailTo}>
-          <h3 className="font-display text-lg sm:text-xl font-semibold text-[#071B3B] leading-tight hover:text-[#0066FF] transition-colors">
+          <h3 className={`font-display ${titleSize} font-semibold text-[#071B3B] leading-tight hover:text-[#0066FF] transition-colors`}>
             {product.name}
           </h3>
         </Link>
@@ -63,6 +84,12 @@ export default function ProductCard({ product, index = 0, categorySlug, image })
             </li>
           ))}
         </ul>
+
+        {displaySize && (
+          <div className="mt-3 text-xs sm:text-sm text-[#0066FF] font-medium">
+            Display: {displaySize}
+          </div>
+        )}
 
         <div className="mt-auto pt-4 sm:pt-6 flex items-center justify-between">
           <Link

@@ -15,35 +15,49 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+  const set = (k) => (e) => {
+    setForm({ ...form, [k]: e.target.value });
+    // Clear error for this field when user starts typing
+    if (errors[k]) {
+      setErrors(prev => ({ ...prev, [k]: "" }));
+    }
+  };
 
   const validateForm = () => {
     const newErrors = {};
     
     // Name validation
     if (!form.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = "Please enter your name.";
     } else if (form.name.trim().length < 2) {
       newErrors.name = "Name must be at least 2 characters";
+    } else if (/^\d+$/.test(form.name.trim())) {
+      newErrors.name = "Name cannot contain only numbers";
     }
 
     // Email validation
     if (!form.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = "Please enter a valid email address.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = "Please enter a valid email address";
+      newErrors.email = "Please enter a valid email address.";
     }
 
-    // Phone validation (optional but if provided, must be valid)
-    if (form.phone.trim() && !/^[+]?[\d\s-]{10,}$/.test(form.phone.replace(/\s/g, ''))) {
-      newErrors.phone = "Please enter a valid phone number";
+    // Phone validation (required, Indian mobile number format)
+    if (!form.phone.trim()) {
+      newErrors.phone = "Please enter a valid 10-digit mobile number.";
+    } else {
+      const cleanPhone = form.phone.replace(/[\s\-\(\)]/g, '');
+      const indianPhoneRegex = /^(\+91)?[6-9]\d{9}$/;
+      if (!indianPhoneRegex.test(cleanPhone)) {
+        newErrors.phone = "Please enter a valid 10-digit mobile number.";
+      }
     }
 
     // Message validation
     if (!form.message.trim()) {
-      newErrors.message = "Message is required";
+      newErrors.message = "Please enter your requirement.";
     } else if (form.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters";
+      newErrors.message = "Please enter your requirement.";
     }
 
     setErrors(newErrors);
@@ -52,6 +66,10 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
 
   const submit = async (e) => {
     e.preventDefault();
+    
+    if (loading) {
+      return; // Prevent duplicate submissions
+    }
     
     if (!validateForm()) {
       toast.error("Please fix the errors in the form");
@@ -132,32 +150,36 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
         </div>
       )}
 
-      <form onSubmit={submit} className="space-y-4" data-testid="contact-form">
+      <form onSubmit={submit} className="space-y-4" data-testid="contact-form" noValidate>
         <div className="grid sm:grid-cols-2 gap-4">
-          <Field label="Your name" value={form.name} onChange={set("name")} required testid="contact-name" error={errors.name} />
+          <Field label="Your name" value={form.name} onChange={set("name")} required testid="contact-name" error={errors.name} aria-required="true" />
           <Field label="Company" value={form.company} onChange={set("company")} testid="contact-company" error={errors.company} />
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
-          <Field label="Email" type="email" value={form.email} onChange={set("email")} required testid="contact-email" error={errors.email} />
-          <Field label="Phone" value={form.phone} onChange={set("phone")} testid="contact-phone" error={errors.phone} />
+          <Field label="Email" type="email" value={form.email} onChange={set("email")} required testid="contact-email" error={errors.email} aria-required="true" />
+          <Field label="Mobile Number" value={form.phone} onChange={set("phone")} required testid="contact-phone" error={errors.phone} aria-required="true" />
         </div>
         {kind !== "contact" && (
           <Field label="Product of interest" value={form.product} onChange={set("product")} testid="contact-product" error={errors.product} />
         )}
         <Field label="Subject" value={form.subject} onChange={set("subject")} testid="contact-subject" error={errors.subject} />
         <div>
-          <label className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#2E3440]/60 block mb-2">
+          <label htmlFor="contact-message" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#2E3440]/60 block mb-2">
             How can we help?
           </label>
           <textarea
+            id="contact-message"
             required
             rows={4}
             value={form.message}
             onChange={set("message")}
             className={`w-full bg-[#F5F7FA] border focus:border-[#0066FF] focus:bg-white rounded-2xl px-5 py-4 text-sm outline-none transition-colors resize-none ${errors.message ? 'border-red-500' : 'border-transparent'}`}
             data-testid="contact-message"
+            aria-required="true"
+            aria-invalid={errors.message ? "true" : "false"}
+            aria-describedby={errors.message ? "contact-message-error" : undefined}
           />
-          {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+          {errors.message && <p id="contact-message-error" className="text-red-500 text-xs mt-1" role="alert">{errors.message}</p>}
         </div>
         <button type="submit" disabled={loading} className="btn-primary w-full sm:w-auto" data-testid="contact-submit">
           {loading ? "Sending…" : "Send message"} <ArrowUpRight size={16} />
@@ -168,18 +190,23 @@ export default function ContactBlock({ compact = false, defaultProduct = "", cat
 }
 
 function Field({ label, value, onChange, type = "text", required = false, testid, error }) {
+  const fieldId = `${testid}-${type}`;
   return (
     <div>
-      <label className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#2E3440]/60 block mb-2">{label}{required && " *"}</label>
+      <label htmlFor={fieldId} className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#2E3440]/60 block mb-2">{label}{required && " *"}</label>
       <input
+        id={fieldId}
         type={type}
         value={value}
         onChange={onChange}
         required={required}
         className={`w-full bg-[#F5F7FA] border focus:border-[#0066FF] focus:bg-white rounded-full px-5 py-3 text-sm outline-none transition-colors ${error ? 'border-red-500' : 'border-transparent'}`}
         data-testid={testid}
+        aria-required={required ? "true" : "false"}
+        aria-invalid={error ? "true" : "false"}
+        aria-describedby={error ? `${fieldId}-error` : undefined}
       />
-      {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
+      {error && <p id={`${fieldId}-error`} className="text-red-500 text-xs mt-1" role="alert">{error}</p>}
     </div>
   );
 }

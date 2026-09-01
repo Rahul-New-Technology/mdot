@@ -74,12 +74,114 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.mdotitsoluzione.com/products/desktop</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mdotitsoluzione.com/products/ram-ssd</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Services Page -->
   <url>
     <loc>https://www.mdotitsoluzione.com/services</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- IT Asset Buyback Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/services/it-asset-buyback</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- E-Waste Recycling Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/services/e-waste-recycling</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- IT Asset Disposal Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/services/it-asset-disposal</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Secure Data Wiping Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/services/secure-data-wiping</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- IT Equipment Pickup Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/services/it-equipment-pickup</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Laptop & Desktop Repair Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/services/laptop-desktop-repair</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Server & Networking Services Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/services/server-networking-services</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- IT Hardware Refurbishment Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/services/it-hardware-refurbishment</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Corporate IT Asset Management Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/services/corporate-it-asset-management</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- RAM & SSD Upgrade Services Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/services/ram-ssd-upgrade</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- RAM & SSD Product Page -->
+  <url>
+    <loc>https://www.mdotitsoluzione.com/products/ram-ssd</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Brands Page -->
@@ -136,14 +238,6 @@
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-
-  <!-- Blog Page -->
-  <url>
-    <loc>https://www.mdotitsoluzione.com/blog</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- FAQ Page -->

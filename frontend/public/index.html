@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,6 +21,16 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <link rel="canonical" href="https://www.mdotitsoluzione.com/" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="M DOT IT SOLUZIONE" />
+    <meta name="geo.region" content="IN-MH" />
+    <meta name="geo.placename" content="Mumbai" />
+    <meta name="ICBM" content="19.0835, 72.8846" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -41,6 +51,7 @@
     <meta property="og:locale" content="en_IN" />
 
     <!-- Google Ads Tag - ONE TIME ONLY -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=AW-18349608095"
@@ -142,8 +153,8 @@
         "openingHours": "Mo-Sa 11:00-21:00",
         "priceRange": "₹₹",
         "foundingDate": "2011",
-        "logo": "https://customer-assets-jt897jd0.emergentagent.net/job_mdot-it-premium-1/artifacts/0kka1gkb_image.png",
-        "image": "https://customer-assets-jt897jd0.emergentagent.net/job_mdot-it-premium-1/artifacts/0kka1gkb_image.png",
+        "logo": "https://www.mdotitsoluzione.com/assets/brand/logo.png",
+        "image": "https://www.mdotitsoluzione.com/assets/brand/logo.png",
         "sameAs": [
           "https://www.linkedin.com/company/mdotitsoluzione",
           "https://www.instagram.com/mdotitsoluzione"
@@ -169,7 +180,7 @@
         "@type": "Organization",
         "name": "M DOT IT SOLUZIONE",
         "url": "https://www.mdotitsoluzione.com",
-        "logo": "https://customer-assets-jt897jd0.emergentagent.net/job_mdot-it-premium-1/artifacts/0kka1gkb_image.png",
+        "logo": "https://www.mdotitsoluzione.com/assets/brand/logo.png",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+91 77049 49022",
@@ -202,13 +213,39 @@
       }
     </script>
 
+    <!-- JSON-LD: Product/Service Catalog -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Enterprise IT Hardware Services",
+        "description": "We BUY and SELL enterprise IT hardware including servers, laptops, networking equipment, storage, workstations, security equipment, and network switches across India.",
+        "brand": {
+          "@type": "Brand",
+          "name": "M DOT IT SOLUZIONE"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
+      media="print" onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- Favicon -->
     <link
@@ -220,11 +257,17 @@
       rel="apple-touch-icon"
       href="https://customer-assets-jt897jd0.emergentagent.net/job_mdot-it-premium-1/artifacts/0kka1gkb_image.png"
     />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
   </head>
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <div id="root"></div>
+    
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="/assets/brand/logo.png" as="image" />
   </body>
 </html>

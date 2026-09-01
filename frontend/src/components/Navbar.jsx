@@ -15,15 +15,20 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const { pathname } = useLocation();
-  const dropdownId = useId();
+  const productsDropdownId = useId();
+  const servicesDropdownId = useId();
   const closeTimer = useRef(null);
 
   useEffect(() => {
     setOpen(false);
     setProductsOpen(false);
+    setServicesOpen(false);
     setMobileProductsOpen(false);
+    setMobileServicesOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -42,7 +47,17 @@ export default function Navbar() {
     closeTimer.current = setTimeout(() => setProductsOpen(false), 120);
   };
 
-  const productsItem = NAV.find((item) => item.children);
+  const openServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setServicesOpen(true);
+  };
+
+  const scheduleCloseServices = () => {
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 120);
+  };
+
+  const productsItem = NAV.find((item) => item.label === "Products");
+  const servicesItem = NAV.find((item) => item.label === "Services");
 
   return (
     <>
@@ -60,13 +75,13 @@ export default function Navbar() {
             <Logo variant={scrolled ? "dark" : "light"} size={44} />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-0 xl:gap-1 flex-nowrap shrink min-w-0" aria-label="Primary">
-            {NAV.slice(0, 8).map((item) =>
+          <nav className="hidden lg:flex items-center gap-0 xl:gap-1 flex-nowrap shrink min-w-0" role="navigation" aria-label="Primary navigation">
+            {NAV.map((item) =>
               item.children ? (
                 <div
                   key={item.label}
-                  onMouseEnter={openProducts}
-                  onMouseLeave={scheduleCloseProducts}
+                  onMouseEnter={item.label === "Products" ? openProducts : openServices}
+                  onMouseLeave={item.label === "Products" ? scheduleCloseProducts : scheduleCloseServices}
                   className="relative"
                 >
                   <Link
@@ -80,36 +95,40 @@ export default function Navbar() {
                           ? "text-[#071B3B]/80 hover:text-[#0066FF]"
                           : "text-white/85 hover:text-white"
                     }`}
-                    aria-expanded={productsOpen}
+                    aria-expanded={item.label === "Products" ? productsOpen : servicesOpen}
                     aria-haspopup="menu"
-                    aria-controls={dropdownId}
+                    aria-controls={item.label === "Products" ? productsDropdownId : servicesDropdownId}
                     data-testid={`nav-${item.label.toLowerCase()}`}
-                    onFocus={openProducts}
+                    onFocus={item.label === "Products" ? openProducts : openServices}
                     onKeyDown={(e) => {
-                      if (e.key === "Escape") setProductsOpen(false);
+                      if (e.key === "Escape") {
+                        if (item.label === "Products") setProductsOpen(false);
+                        else setServicesOpen(false);
+                      }
                       if (e.key === "ArrowDown") {
                         e.preventDefault();
-                        openProducts();
+                        if (item.label === "Products") openProducts();
+                        else openServices();
                       }
                     }}
                   >
                     {item.label}
-                    <ChevronDown size={14} className={`transition-transform ${productsOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown size={14} className={`transition-transform ${item.label === "Products" ? (productsOpen ? "rotate-180" : "") : (servicesOpen ? "rotate-180" : "")}`} />
                   </Link>
                   <AnimatePresence>
-                    {productsOpen && (
+                    {(item.label === "Products" ? productsOpen : servicesOpen) && (
                       <motion.div
-                        id={dropdownId}
+                        id={item.label === "Products" ? productsDropdownId : servicesDropdownId}
                         role="menu"
                         initial={{ opacity: 0, y: 6 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 6 }}
                         transition={{ duration: 0.18 }}
                         className="absolute left-0 top-full pt-3"
-                        onMouseEnter={openProducts}
-                        onMouseLeave={scheduleCloseProducts}
+                        onMouseEnter={item.label === "Products" ? openProducts : openServices}
+                        onMouseLeave={item.label === "Products" ? scheduleCloseProducts : scheduleCloseServices}
                       >
-                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(7,27,59,0.15)] p-3 min-w-[240px] border border-black/5">
+                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(7,27,59,0.15)] p-3 min-w-[260px] max-h-[60vh] overflow-y-auto border border-black/5">
                           {item.children.map((c) => {
                             const active = pathname === c.to;
                             return (
@@ -122,7 +141,7 @@ export default function Navbar() {
                                     ? "bg-[#0066FF]/10 text-[#0066FF] font-medium"
                                     : "text-[#071B3B] hover:bg-[#F5F7FA] active:bg-[#E8EEF7]"
                                 }`}
-                                data-testid={`nav-child-${c.label.toLowerCase()}`}
+                                data-testid={`nav-child-${c.label.toLowerCase().replace(/\s+/g, "-")}`}
                               >
                                 {c.label}
                                 <ArrowUpRight
@@ -165,6 +184,7 @@ export default function Navbar() {
               href={`tel:${COMPANY.phoneRaw}`}
               className={`text-[13px] font-mono transition-colors ${scrolled ? "text-[#071B3B]/70 hover:text-[#0066FF]" : "text-white/70 hover:text-white"}`}
               data-testid="nav-phone"
+              aria-label={`Call ${COMPANY.phone}`}
             >
               {COMPANY.phone}
             </a>
@@ -202,16 +222,19 @@ export default function Navbar() {
                     <button
                       type="button"
                       className="w-full py-3 text-lg font-display text-[#071B3B] flex items-center justify-between"
-                      aria-expanded={mobileProductsOpen}
-                      onClick={() => setMobileProductsOpen((v) => !v)}
+                      aria-expanded={item.label === "Products" ? mobileProductsOpen : mobileServicesOpen}
+                      onClick={() => {
+                        if (item.label === "Products") setMobileProductsOpen((v) => !v);
+                        else setMobileServicesOpen((v) => !v);
+                      }}
                     >
                       {item.label}
-                      <ChevronDown size={18} className={`transition-transform ${mobileProductsOpen ? "rotate-180" : ""}`} />
+                      <ChevronDown size={18} className={`transition-transform ${item.label === "Products" ? (mobileProductsOpen ? "rotate-180" : "") : (mobileServicesOpen ? "rotate-180" : "")}`} />
                     </button>
-                    {mobileProductsOpen && (
+                    {(item.label === "Products" ? mobileProductsOpen : mobileServicesOpen) && (
                       <div className="pb-3 pl-2 flex flex-col gap-1">
                         <Link to={item.to} className="py-2 text-[#0066FF] text-base">
-                          All products
+                          All {item.label.toLowerCase()}
                         </Link>
                         {item.children.map((c) => (
                           <Link

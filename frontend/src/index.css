@@ -157,11 +157,11 @@
         border-color: #071B3B;
     }
     .section-pad {
-        padding-top: 120px;
-        padding-bottom: 120px;
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
     @media (max-width: 768px) {
-        .section-pad { padding-top: 80px; padding-bottom: 80px; }
+        .section-pad { padding-top: 60px; padding-bottom: 60px; }
     }
     .chip {
         display: inline-flex;

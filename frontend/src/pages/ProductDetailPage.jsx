@@ -53,6 +53,8 @@ export default function ProductDetailPage() {
                   className="w-full h-full object-cover"
                   width={960}
                   height={720}
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
               {gallery.length > 1 && (
@@ -67,7 +69,7 @@ export default function ProductDetailPage() {
                       }`}
                       aria-label={`View photo ${i + 1}`}
                     >
-                      <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
+                      <img src={src} alt={`${product.name} - photo ${i + 1}`} className="w-full h-full object-cover" loading="lazy" decoding="async" width={200} height={150} />
                     </button>
                   ))}
                 </div>

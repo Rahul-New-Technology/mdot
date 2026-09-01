@@ -23,9 +23,11 @@ export default function SellEquipmentPage() {
     
     // Name validation
     if (!form.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = "Please enter your name.";
     } else if (form.name.trim().length < 2) {
       newErrors.name = "Name must be at least 2 characters";
+    } else if (/^\d+$/.test(form.name.trim())) {
+      newErrors.name = "Name cannot contain only numbers";
     }
 
     // Company validation
@@ -35,14 +37,20 @@ export default function SellEquipmentPage() {
 
     // Email validation
     if (!form.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = "Please enter a valid email address.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = "Please enter a valid email address";
+      newErrors.email = "Please enter a valid email address.";
     }
 
-    // Phone validation (optional but if provided, must be valid)
-    if (form.phone.trim() && !/^[+]?[\d\s-]{10,}$/.test(form.phone.replace(/\s/g, ''))) {
-      newErrors.phone = "Please enter a valid phone number";
+    // Phone validation (required, Indian mobile number format)
+    if (!form.phone.trim()) {
+      newErrors.phone = "Please enter a valid 10-digit mobile number.";
+    } else {
+      const cleanPhone = form.phone.replace(/[\s\-\(\)]/g, '');
+      const indianPhoneRegex = /^(\+91)?[6-9]\d{9}$/;
+      if (!indianPhoneRegex.test(cleanPhone)) {
+        newErrors.phone = "Please enter a valid 10-digit mobile number.";
+      }
     }
 
     // Equipment type validation
@@ -64,9 +72,9 @@ export default function SellEquipmentPage() {
 
     // Details validation
     if (!form.details.trim()) {
-      newErrors.details = "Details are required";
+      newErrors.details = "Please enter equipment details.";
     } else if (form.details.trim().length < 10) {
-      newErrors.details = "Please provide more details (at least 10 characters)";
+      newErrors.details = "Please enter equipment details.";
     }
 
     setErrors(newErrors);
@@ -75,6 +83,10 @@ export default function SellEquipmentPage() {
 
   const submit = async (e) => {
     e.preventDefault();
+    
+    if (loading) {
+      return; // Prevent duplicate submissions
+    }
     
     if (!validateForm()) {
       toast.error("Please fix the errors in the form");

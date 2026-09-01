@@ -92,6 +92,9 @@ export default function Hero() {
           alt="Enterprise data center with server racks and networking equipment"
           className="w-full h-full object-cover"
           loading="eager"
+          width={1400}
+          height={800}
+          fetchPriority="high"
         />
       </motion.div>
 
@@ -167,6 +170,9 @@ export default function Hero() {
             <motion.img
               src={COMPANY.logo}
               alt="M DOT IT SOLUZIONE logo - Enterprise IT Hardware Supplier"
+              loading="eager"
+              width={240}
+              height={240}
               initial={{
                 opacity: 0,
                 y: 10,
@@ -191,7 +197,7 @@ export default function Hero() {
 
       <motion.div
         style={{ opacity }}
-        className="relative z-10 max-w-[1400px] mx-auto px-5 md:px-8 pt-40 md:pt-48 pb-24 min-h-[100vh] flex flex-col justify-center"
+        className="relative z-10 max-w-[1400px] mx-auto px-5 md:px-8 pt-32 md:pt-40 pb-16 min-h-[70vh] flex flex-col justify-center"
       >
         {/* =======================================================
             BADGE
@@ -223,7 +229,7 @@ export default function Hero() {
         ======================================================== */}
 
         <h1
-          className="font-display font-semibold text-white text-[28px] sm:text-[42px] md:text-[52px] lg:text-[64px] leading-[1.1] tracking-[-0.02em] max-w-[20ch]"
+          className="font-display font-semibold text-white text-[28px] sm:text-[42px] md:text-[52px] lg:text-[64px] leading-[1.1] tracking-[-0.02em] max-w-[28ch] md:max-w-[32ch] md:pr-[450px]"
           data-testid="hero-heading"
         >
           <div>
@@ -266,7 +272,7 @@ export default function Hero() {
             duration: 0.7,
             delay: 1.0,
           }}
-          className="mt-8 text-white/70 text-base md:text-lg max-w-[52ch]"
+          className="mt-8 text-white/70 text-base md:text-lg max-w-[60ch] md:max-w-[68ch]"
           data-testid="hero-description"
         >
           Premium refurbished Dell, HP, Lenovo laptops and enterprise IT
@@ -341,7 +347,7 @@ export default function Hero() {
             duration: 0.9,
             delay: 1.6,
           }}
-          className="mt-16 md:mt-24 flex flex-wrap items-center gap-8 text-white/60 text-xs font-mono uppercase tracking-[0.18em]"
+          className="mt-8 md:mt-12 flex flex-wrap items-center gap-8 text-white/60 text-xs font-mono uppercase tracking-[0.18em]"
         >
           <span>Cisco Premier</span>
 

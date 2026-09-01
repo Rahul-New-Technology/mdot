@@ -3,11 +3,11 @@ import { COMPANY } from "../data/site";
 
 const MAP_EMBED =
   COMPANY.mapEmbed ||
-  "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15080.554077059349!2d72.871822!3d19.1015782!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c906d3229847%3A0xb5c855d044b2b146!2sM%20DOT%20IT%20SOLUZIONE!5e0!3m2!1sen!2sin!4v1787840914384!5m2!1sen!2sin";
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15080.929134193948!2d72.88699274999999!3d19.0974631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c906d3229847%3A0xb5c855d044b2b146!2sM%20DOT%20IT%20SOLUZIONE!5e0!3m2!1sen!2sin!4v1788270936101!5m2!1sen!2sin";
 
 const MAP_OPEN =
   COMPANY.mapLink ||
-  "https://www.google.com/maps/place/M+DOT+IT+SOLUZIONE/@19.1015782,72.871822,16z/data=!4m6!3m5!1s0x3be7c906d3229847:0xb5c855d044b2b146!8m2!3d19.1015782!4d72.871822!16s%2Fg%2F11y5";
+  "https://www.google.com/maps/place/M+DOT+IT+SOLUZIONE/@19.0974631,72.8869927,16z/data=!4m6!3m5!1s0x3be7c906d3229847:0xb5c855d044b2b146!8m2!3d19.0974631!4d72.8869927!16s%2Fg%2F11y5";
 
 export default function LocationMap() {
   const hostRef = useRef(null);

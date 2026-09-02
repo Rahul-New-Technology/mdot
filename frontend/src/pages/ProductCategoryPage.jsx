@@ -7,6 +7,7 @@ import ContactBlock from "../components/ContactBlock";
 import { PRODUCTS, CATEGORIES, COMPANY } from "../data/site";
 import { Search, Phone, ArrowUpRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { trackGoogleAdsPhoneConversion } from "../utils/googleAdsTracking";
 
 export default function ProductCategoryPage() {
   const { category } = useParams();
@@ -133,16 +134,7 @@ export default function ProductCategoryPage() {
   const canonicalUrl = `https://www.mdotitsoluzione.com/products/${category}`;
 
   const handleCallClick = () => {
-    try {
-      if (
-        typeof window !== "undefined" &&
-        typeof window.gtag_report_call_conversion === "function"
-      ) {
-        window.gtag_report_call_conversion();
-      }
-    } catch (error) {
-      console.warn("Google Ads call conversion tracking failed:", error);
-    }
+    trackGoogleAdsPhoneConversion(COMPANY.phoneRaw);
   };
 
   if (cat === "All") {

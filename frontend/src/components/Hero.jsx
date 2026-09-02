@@ -4,6 +4,7 @@ import { ArrowUpRight, PhoneCall } from "lucide-react";
 import { Link } from "react-router-dom";
 import { WordReveal } from "./Reveal";
 import { COMPANY } from "../data/site";
+import { trackGoogleAdsPhoneConversion } from "../utils/googleAdsTracking";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -31,36 +32,8 @@ export default function Hero() {
     [1, 0]
   );
 
-  /*
-   * ============================================================
-   * GOOGLE ADS - WEBSITE PHONE CLICK CONVERSION
-   * ============================================================
-   *
-   * Conversion ID:
-   * AW-18349608095
-   *
-   * Conversion Label:
-   * MOMmCPqqk-IcEJ-Z461E
-   *
-   * This conversion fires when a visitor clicks
-   * the phone number / Call button.
-   */
-
   const handleCallClick = () => {
-    try {
-      if (
-        typeof window !== "undefined" &&
-        typeof window.gtag_report_call_conversion === "function"
-      ) {
-        window.gtag_report_call_conversion();
-      }
-    } catch (error) {
-      // Do not block the phone link if tracking fails.
-      console.warn(
-        "Google Ads call conversion tracking failed:",
-        error
-      );
-    }
+    trackGoogleAdsPhoneConversion(COMPANY.phoneRaw);
 
     /*
      * We intentionally DO NOT prevent the default action.

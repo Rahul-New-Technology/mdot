@@ -1,37 +1,38 @@
 import { useEffect } from "react";
-import "@/App.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from "sonner";
-import useLenis from "@/hooks/useLenis";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import FloatingActions from "@/components/FloatingActions";
+import useLenis from "./hooks/useLenis";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import FloatingActions from "./components/FloatingActions";
+import { setupGlobalPhoneTracking, setupGlobalWhatsAppTracking } from "./utils/googleAdsTracking";
 
-import HomePage from "@/pages/HomePage";
-import AboutPage from "@/pages/AboutPage";
-import ProductsPage from "@/pages/ProductsPage";
-import ProductCategoryPage from "@/pages/ProductCategoryPage";
-import ServicesPage from "@/pages/ServicesPage";
-import WhyPage from "@/pages/WhyPage";
-import CorporatePage from "@/pages/CorporatePage";
-import SellEquipmentPage from "@/pages/SellEquipmentPage";
-import RequestQuotePage from "@/pages/RequestQuotePage";
-import ContactPage from "@/pages/ContactPage";
-import GalleryPage from "@/pages/GalleryPage";
-import RamSsdPage from "@/pages/RamSsdPage";
-import ItAssetBuybackPage from "@/pages/ItAssetBuybackPage";
-import EWasteRecyclingPage from "@/pages/EWasteRecyclingPage";
-import ItAssetDisposalPage from "@/pages/ItAssetDisposalPage";
-import SecureDataWipingPage from "@/pages/SecureDataWipingPage";
-import ItEquipmentPickupPage from "@/pages/ItEquipmentPickupPage";
-import LaptopDesktopRepairPage from "@/pages/LaptopDesktopRepairPage";
-import ServerNetworkingServicesPage from "@/pages/ServerNetworkingServicesPage";
-import ItHardwareRefurbishmentPage from "@/pages/ItHardwareRefurbishmentPage";
-import CorporateItAssetManagementPage from "@/pages/CorporateItAssetManagementPage";
-import RamSsdUpgradePage from "@/pages/RamSsdUpgradePage";
-import { FAQPage, TestimonialsPage } from "@/pages/SimplePages";
-import { PrivacyPage, TermsPage, DisclaimerPage } from "@/pages/LegalPages";
-import NotFoundPage from "@/pages/NotFoundPage";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ProductsPage from "./pages/ProductsPage";
+import ProductCategoryPage from "./pages/ProductCategoryPage";
+import ServicesPage from "./pages/ServicesPage";
+import WhyPage from "./pages/WhyPage";
+import CorporatePage from "./pages/CorporatePage";
+import SellEquipmentPage from "./pages/SellEquipmentPage";
+import RequestQuotePage from "./pages/RequestQuotePage";
+import ContactPage from "./pages/ContactPage";
+import GalleryPage from "./pages/GalleryPage";
+import RamSsdPage from "./pages/RamSsdPage";
+import ItAssetBuybackPage from "./pages/ItAssetBuybackPage";
+import EWasteRecyclingPage from "./pages/EWasteRecyclingPage";
+import ItAssetDisposalPage from "./pages/ItAssetDisposalPage";
+import SecureDataWipingPage from "./pages/SecureDataWipingPage";
+import ItEquipmentPickupPage from "./pages/ItEquipmentPickupPage";
+import LaptopDesktopRepairPage from "./pages/LaptopDesktopRepairPage";
+import ServerNetworkingServicesPage from "./pages/ServerNetworkingServicesPage";
+import ItHardwareRefurbishmentPage from "./pages/ItHardwareRefurbishmentPage";
+import CorporateItAssetManagementPage from "./pages/CorporateItAssetManagementPage";
+import RamSsdUpgradePage from "./pages/RamSsdUpgradePage";
+import { FAQPage, TestimonialsPage } from "./pages/SimplePages";
+import { PrivacyPage, TermsPage, DisclaimerPage } from "./pages/LegalPages";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -43,6 +44,13 @@ function ScrollToTop() {
 
 function Shell() {
   useLenis();
+  
+  // Setup global tracking once when app loads
+  useEffect(() => {
+    setupGlobalPhoneTracking();
+    setupGlobalWhatsAppTracking();
+  }, []);
+
   return (
     <>
       <Navbar />

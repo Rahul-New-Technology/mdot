@@ -50,11 +50,11 @@
     <meta property="og:site_name" content="M DOT IT SOLUZIONE" />
     <meta property="og:locale" content="en_IN" />
 
-    <!-- Google Ads Tag - ONE TIME ONLY -->
+    <!-- Google Analytics Tag - ONE TIME ONLY -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-18349608095"
+      src="https://www.googletagmanager.com/gtag/js?id=G-V9ZR12RW81"
     ></script>
 
     <script>
@@ -65,12 +65,11 @@
       }
 
       gtag("js", new Date());
-      gtag("config", "AW-18349608095");
+      gtag("config", "G-V9ZR12RW81");
 
       /*
        * Google Ads - Call Button Conversion
-       * Conversion ID:
-       * AW-18349608095/MOMmCPqqk-IcEJ-Z461E
+       * Conversion ID: AW-18349608095/MOMmCPqqk-IcEJ-Z461E
        */
       window.gtag_report_call_conversion = function () {
         gtag("event", "conversion", {
@@ -80,22 +79,12 @@
 
       /*
        * Google Ads - Submit Lead Form Conversion
-       * Existing conversion:
-       * AW-18349608095/Q4y9COmf3dkcEJ-Z461E
+       * Conversion ID: AW-18349608095/Q4y9COmf3dkcEJ-Z461E
        */
-      window.gtag_report_conversion = function (url) {
-        var callback = function () {
-          if (typeof url !== "undefined") {
-            window.location = url;
-          }
-        };
-
+      window.gtag_report_form_conversion = function () {
         gtag("event", "conversion", {
-          send_to: "AW-18349608095/Q4y9COmf3dkcEJ-Z461E",
-          event_callback: callback
+          send_to: "AW-18349608095/Q4y9COmf3dkcEJ-Z461E"
         });
-
-        return false;
       };
     </script>
 

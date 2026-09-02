@@ -1,6 +1,6 @@
 import { PhoneCall } from "lucide-react";
 import { COMPANY } from "../data/site";
-import { trackGoogleAdsCallConversion } from "../lib/utils";
+import { trackGoogleAdsPhoneConversion } from "../utils/googleAdsTracking";
 
 export default function CallNow({ variant = "hero", className = "" }) {
   const base =
@@ -12,10 +12,17 @@ export default function CallNow({ variant = "hero", className = "" }) {
           ? "btn-primary"
           : "inline-flex items-center gap-2 rounded-full px-4 sm:px-5 py-3 text-sm font-medium bg-white text-[#071B3B] hover:bg-[#F5F7FA] transition-colors shadow-[0_10px_30px_rgba(7,27,59,0.18)]";
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    trackGoogleAdsPhoneConversion(COMPANY.phoneRaw);
+    // Let the default tel: action proceed
+    window.location.href = `tel:${COMPANY.phoneRaw}`;
+  };
+
   return (
     <a
       href={`tel:${COMPANY.phoneRaw}`}
-      onClick={trackGoogleAdsCallConversion}
+      onClick={handleClick}
       className={`${base} ${className}`.trim()}
       aria-label={`Call Now ${COMPANY.phone}`}
       data-testid="call-now"

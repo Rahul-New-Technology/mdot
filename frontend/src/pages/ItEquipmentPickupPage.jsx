@@ -3,19 +3,11 @@ import { Reveal, SectionHeader } from "../components/Reveal";
 import { PhoneCall, ArrowUpRight, Truck, Laptop, Monitor, Server, Network, HardDrive, Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
 import { COMPANY } from "../data/site";
+import { trackGoogleAdsPhoneConversion } from "../utils/googleAdsTracking";
 
 export default function ItEquipmentPickupPage() {
   const handleCallClick = () => {
-    try {
-      if (
-        typeof window !== "undefined" &&
-        typeof window.gtag_report_call_conversion === "function"
-      ) {
-        window.gtag_report_call_conversion();
-      }
-    } catch (error) {
-      console.warn("Google Ads call conversion tracking failed:", error);
-    }
+    trackGoogleAdsPhoneConversion(COMPANY.phoneRaw);
   };
 
   const customActions = (

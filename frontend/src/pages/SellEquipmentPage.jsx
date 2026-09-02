@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import PageShell from "../components/PageShell";
 import { Reveal, SectionHeader } from "../components/Reveal";
 import { ArrowUpRight, ShieldCheck, Recycle, Leaf } from "lucide-react";
-import { trackGoogleAdsConversion } from "../lib/utils";
+import { trackGoogleAdsFormConversion } from "../utils/googleAdsTracking";
 
 // Google Apps Script URL - Replace with your actual Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = process.env.REACT_APP_GOOGLE_SCRIPT_URL || "";
@@ -125,7 +125,7 @@ export default function SellEquipmentPage() {
       setErrors({});
 
       // Track Google Ads conversion
-      trackGoogleAdsConversion();
+      trackGoogleAdsFormConversion();
     } catch (err) {
       toast.error("Please check the form and try again.");
     } finally {

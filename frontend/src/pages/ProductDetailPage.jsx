@@ -9,7 +9,7 @@ import {
   getProductById,
   getProductGallery,
 } from "../data/site";
-import { trackGoogleAdsCallConversion } from "../lib/utils";
+import { trackGoogleAdsPhoneConversion } from "../utils/googleAdsTracking";
 
 export default function ProductDetailPage() {
   const { categorySlug, productId } = useParams();
@@ -108,7 +108,11 @@ export default function ProductDetailPage() {
                 </Link>
                 <a
                   href={`tel:${COMPANY.phoneRaw}`}
-                  onClick={trackGoogleAdsCallConversion}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    trackGoogleAdsPhoneConversion(COMPANY.phoneRaw);
+                    window.location.href = `tel:${COMPANY.phoneRaw}`;
+                  }}
                   className="inline-flex items-center justify-center gap-2 min-h-12 px-5 py-3 rounded-full bg-[#071B3B] text-white text-sm font-medium"
                 >
                   <PhoneCall size={16} /> Call Now — {COMPANY.phone}
